@@ -504,14 +504,15 @@ nav {
   text-align: left;  /* Ensure heading is left-aligned */
 }
 
-/* Hero Subtitle 1 */
-.hero-subtitle-1 {
-  font-size: 26px; /* Slightly larger than other subtitles */
-  color: #333333; /* Darker color for better visibility */
-  margin-bottom: 20px; /* Space between subtitle and buttons */
-  font-weight: 500; /* Medium font weight */
-  letter-spacing: 1px; /* Add some spacing between characters */
-  margin-left: -50px; /* Ensure no extra left margin */
+/* Hero Subtitle (aligns left) */
+.hero-subtitle {
+  font-size: 26px; 
+  color: #333333;
+  margin-top: 10px;  /* Space between h1 and h2 */
+  text-align: left; /* Ensure subtitle is left-aligned */
+  font-weight: 500; 
+  letter-spacing: 1px;
+  margin-left: 0;  /* Ensure no extra left margin */
 }
 
 /* Buttons */
@@ -539,24 +540,26 @@ nav {
 
 /* Right Lottie Animation */
 .hero-animation {
-  width: 100%; /* Adjust to fit container */
+  width: 100%;
   height: auto;
   max-width: 700px;
   max-height: 600px;
-  margin-top: 20px; /* Add margin to separate from text */
+  margin-top: 20px;
 }
+
 
 /* For Mobile L (768px) */
 @media (max-width: 768px) { 
   #hero {
     padding: 40px; /* Reduced padding */
     height: auto;
-    text-align: center;
+    text-align: left; /* Align text to the left */
   }
 
   #hero h1 {
     font-size: 32px; /* Adjusted font size for Mobile L */
     margin-top: 20px;
+    color: #000; /* Set text color to black */
   }
 
   .hero-subtitle-1 {
@@ -564,11 +567,20 @@ nav {
     line-height: 32px;
     margin-bottom: 15px;
     font-weight: 400;
+    color: #000; /* Set text color to black */
   }
 
   #hero .btn-get-started {
     font-size: 14px;
     padding: 8px 20px;
+    margin-right: 10px; /* Space between buttons */
+    display: inline-block; /* Align buttons side by side */
+  }
+
+  #hero .btn-get-started:hover {
+    background: transparent;
+    color: #e03a3c;
+    border: 2px solid #e03a3c;
   }
 
   .hero-image dotlottie-wc {
@@ -583,12 +595,13 @@ nav {
   #hero {
     padding: 30px; /* Reduced padding */
     height: auto;
-    text-align: center;
+    text-align: left; /* Align text to the left */
   }
 
   #hero h1 {
     font-size: 28px; /* Adjusted font size for Mobile M */
     margin-top: 15px;
+    color: #000; /* Set text color to black */
   }
 
   .hero-subtitle-1 {
@@ -596,11 +609,20 @@ nav {
     line-height: 28px;
     margin-bottom: 12px;
     font-weight: 400;
+    color: #000; /* Set text color to black */
   }
 
   #hero .btn-get-started {
     font-size: 12px;
     padding: 6px 15px;
+    margin-right: 10px; /* Space between buttons */
+    display: inline-block; /* Align buttons side by side */
+  }
+
+  #hero .btn-get-started:hover {
+    background: transparent;
+    color: #e03a3c;
+    border: 2px solid #e03a3c;
   }
 
   .hero-image dotlottie-wc {
@@ -615,12 +637,13 @@ nav {
   #hero {
     padding: 20px; /* Reduced padding */
     height: auto;
-    text-align: center;
+    text-align: left; /* Align text to the left */
   }
 
   #hero h1 {
     font-size: 24px; /* Adjusted font size for Mobile S */
     margin-top: 10px;
+    color: #000; /* Set text color to black */
   }
 
   .hero-subtitle-1 {
@@ -628,11 +651,20 @@ nav {
     line-height: 24px;
     margin-bottom: 10px;
     font-weight: 400;
+    color: #000; /* Set text color to black */
   }
 
   #hero .btn-get-started {
     font-size: 10px;
     padding: 5px 12px;
+    margin-right: 10px; /* Space between buttons */
+    display: inline-block; /* Align buttons side by side */
+  }
+
+  #hero .btn-get-started:hover {
+    background: transparent;
+    color: #e03a3c;
+    border: 2px solid #e03a3c;
   }
 
   .hero-image dotlottie-wc {
