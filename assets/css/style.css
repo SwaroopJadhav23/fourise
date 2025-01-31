@@ -479,7 +479,7 @@ nav {
 
 
 /*--------------------------------------------------------------
- /* Hero Section */
+/* Hero Section */
 #hero {
   width: 100%;
   height: 100vh;
@@ -508,7 +508,7 @@ nav {
 .hero-subtitle-1 {
   font-size: 26px; /* Slightly larger than other subtitles */
   color: #333333; /* Darker color for better visibility */
-  margin-bottom: 20px; /* Space between subtitle and buttons *
+  margin-bottom: 20px; /* Space between subtitle and buttons */
   font-weight: 500; /* Medium font weight */
   letter-spacing: 1px; /* Add some spacing between characters */
   margin-left: -50px; /* Ensure no extra left margin */
@@ -546,97 +546,118 @@ nav {
   margin-top: 20px; /* Add margin to separate from text */
 }
 
-
-/* For mobile responsiveness */
-@media (max-width: 768px) { /* Mobile L (425px) */
+/* For Mobile L (768px) */
+@media (max-width: 768px) { 
   #hero {
+    padding: 40px; /* Reduced padding */
+    height: auto;
     text-align: center;
-    padding-top: 58px;
-    margin-top: 20px;
   }
 
   #hero h1 {
-    font-size: 30px; /* Adjusted font size for Mobile L */
-    margin-top: 40px;
-  }
-
-  #hero h2 {
-    font-size: 20px; /* Adjusted font size for Mobile L */
-    line-height: 28px;
-    margin-bottom: 20px;
-  }
-
-  .hero-image dotlottie-wc {
-    width: 100%; /* Make animation take full width */
+    font-size: 32px; /* Adjusted font size for Mobile L */
     margin-top: 20px;
+  }
+
+  .hero-subtitle-1 {
+    font-size: 22px; /* Adjusted font size for Mobile L */
+    line-height: 32px;
+    margin-bottom: 15px;
+    font-weight: 400;
   }
 
   #hero .btn-get-started {
     font-size: 14px;
     padding: 8px 20px;
   }
+
+  .hero-image dotlottie-wc {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 
-@media (max-width: 375px) { /* Mobile M (375px) */
+/* For Mobile M (375px) */
+@media (max-width: 375px) { 
   #hero {
+    padding: 30px; /* Reduced padding */
+    height: auto;
     text-align: center;
-    padding-top: 50px;
   }
 
   #hero h1 {
-    font-size: 26px; /* Adjusted font size for Mobile M */
+    font-size: 28px; /* Adjusted font size for Mobile M */
+    margin-top: 15px;
   }
 
-  #hero h2 {
-    font-size: 18px; /* Adjusted font size for Mobile M */
-    line-height: 24px;
-    margin-bottom: 20px;
-  }
-
-  .hero-image dotlottie-wc {
-    width: 100%; /* Make animation take full width */
-    margin-top: 20px;
+  .hero-subtitle-1 {
+    font-size: 20px; /* Adjusted font size for Mobile M */
+    line-height: 28px;
+    margin-bottom: 12px;
+    font-weight: 400;
   }
 
   #hero .btn-get-started {
     font-size: 12px;
     padding: 6px 15px;
   }
+
+  .hero-image dotlottie-wc {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 15px;
+  }
 }
 
-@media (max-width: 320px) { /* Mobile S (320px) */
+/* For Mobile S (320px) */
+@media (max-width: 320px) { 
   #hero {
+    padding: 20px; /* Reduced padding */
+    height: auto;
     text-align: center;
-    padding-top: 40px;
   }
 
   #hero h1 {
-    font-size: 22px; /* Adjusted font size for Mobile S */
+    font-size: 24px; /* Adjusted font size for Mobile S */
+    margin-top: 10px;
   }
 
-  #hero h2 {
-    font-size: 16px; /* Adjusted font size for Mobile S */
-    line-height: 22px;
-    margin-bottom: 15px;
-  }
-
-  .hero-image dotlottie-wc {
-    width: 100%; /* Make animation take full width */
-    margin-top: 15px;
+  .hero-subtitle-1 {
+    font-size: 18px; /* Adjusted font size for Mobile S */
+    line-height: 24px;
+    margin-bottom: 10px;
+    font-weight: 400;
   }
 
   #hero .btn-get-started {
     font-size: 10px;
-    padding: 6px 12px;
+    padding: 5px 12px;
+  }
+
+  .hero-image dotlottie-wc {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 10px;
   }
 }
 
-@media (max-height: 500px) { /* Handle smaller screen heights */
+/* Handle smaller screen heights */
+@media (max-height: 500px) { 
   #hero {
     height: 120vh;
+    padding-top: 20px;
+  }
+
+  #hero h1 {
+    font-size: 28px;
+  }
+
+  .hero-subtitle-1 {
+    font-size: 20px;
   }
 }
-  
+
 
 
 /*--------------------------------------------------------------
