@@ -115,8 +115,7 @@
   <!-- ======= Hero Section with Horizontal Slider ======= -->
 
 
-<!-- ======= Hero Section with Horizontal Slider ======= -->
-<section id="hero" class="d-flex align-items-center" style="background-color: #f8f9fa; padding: 60px 0; margin-top: 2%;">
+<!-- ======= Hero Section with Horizontal Slider ======= --><section id="hero" class="d-flex align-items-center" style="background-color: #f8f9fa; padding: 60px 0; margin-top: 2%;">
   <div class="container-fluid" data-aos="zoom-out" data-aos-delay="100">
     <div class="row justify-content-center">
       <div class="col-xl-10">
@@ -124,53 +123,52 @@
           <!-- Slider Container -->
           <div class="col-xl-12" style="overflow: hidden; position: relative; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); border-radius: 10px; margin-bottom: 20px;">
             <div id="sliderContainer" class="slider-container" style="display: flex; transition: transform 1s ease; width: 300%;">
-
+              
               <!-- Slide 1 -->
               <div class="slide" style="width: 33.33%; display: flex; align-items: center; justify-content: space-between;">
-                <!-- Lottie Animation -->
                 <div style="flex: 1;">
                   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.3.0/dist/dotlottie-wc.js" type="module"></script>
                   <dotlottie-wc src="https://lottie.host/4e91e3cc-3bf3-4a81-bcfe-faace7c88d8c/IhBY7pLZJ2.lottie" autoplay loop style="width: 100%; height: auto;"></dotlottie-wc>
                 </div>
-                <!-- Heading and Text -->
                 <div style="flex: 1; text-align: justify; padding-left: 10px;">
-                  <h1 style="color: #e03a3c; font-weight: bold; text-align: justify;">Create Mobile Apps With us</h1>
+                  <h1 style="color: #e03a3c; font-weight: bold;">Create Mobile Apps With Us</h1>
                   <h2>Android Applications are delivered and developed by us.</h2>
-                  <p>Every business wants to become easier for clients so mobile applications perform such wonderful tasks.</p>
+                  <p>Every business wants to become easier for clients, and mobile applications<br> help achieve this.</p>
                   <a href="contact.html" class="btn-get-started scrollto">Contact us</a>
                 </div>
               </div>
 
               <!-- Slide 2 -->
               <div class="slide" style="width: 33.33%; display: flex; align-items: center; justify-content: space-between;">
-                <!-- Lottie Animation -->
                 <div style="flex: 1;">
                   <dotlottie-wc src="https://lottie.host/1c50b72e-37e9-4b2b-92c6-bf177edf697f/U4aMOcEXhv.lottie" autoplay loop style="width: 100%; height: auto;"></dotlottie-wc>
                 </div>
-                <!-- Heading and Text -->
                 <div style="flex: 1; text-align: justify; padding-left: 20px;">
-                  <h1 style="color: #e03a3c; font-weight: bold; text-align: justify;">Our Expertise</h1>
-                  <h2>Create Websites With us</h2>
-                  <p>We provide all business Websites with minimum cost. Also Web applications and web portals for spreading your business over the Internet.</p>
+                  <h1 style="color: #e03a3c; font-weight: bold;">Our Expertise</h1>
+                  <h2>Create Websites With Us</h2>
+                  <p>We provide all business websites at a minimum cost, along with<br> web applications and portals to grow your business online.</p>
                   <a href="web.html" class="btn-get-started scrollto">Get in touch</a>
                 </div>
               </div>
 
               <!-- Slide 3 -->
               <div class="slide" style="width: 33.33%; display: flex; align-items: center; justify-content: space-between;">
-                <!-- Lottie Animation -->
                 <div style="flex: 1;">
                   <dotlottie-wc src="https://lottie.host/0a4f7e33-a355-4817-96ae-f448fb7dfcd0/MADGerX19k.lottie" autoplay loop style="width: 100%; height: auto;"></dotlottie-wc>
                 </div>
-                <!-- Heading and Text -->
                 <div style="flex: 1; text-align: justify; padding-left: 20px;">
-                  <h1 style="color: #e03a3c; font-weight: bold; text-align: justify;">Develop RPA Projects With Us</h1>
-                  <p>Robotic Process Automation Solicite Daily human tasks into the machine process. All tasks are performed by robots without any human intervention.</p>
+                  <h1 style="color: #e03a3c; font-weight: bold;">Develop RPA Projects With Us</h1>
+                  <p>Robotic Process Automation helps automate daily human tasks,<br> making processes faster and more efficient without human intervention.</p>
                   <a href="rpa-internship.html" class="btn-get-started scrollto">Contact us</a>
                 </div>
               </div>
 
             </div>
+
+            <!-- Previous & Next Buttons -->
+            <button id="prevBtn" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background-color: #e03a3c; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; z-index: 10;">❮</button>
+            <button id="nextBtn" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: #e03a3c; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; z-index: 10;">❯</button>
+
           </div>
         </div>
       </div>
@@ -179,21 +177,52 @@
     <hr style="border: 1px solid #e03a3c; margin: 20px 0;">
   </div>
 
-  <!-- JavaScript for Slide Transition -->
+  <!-- JavaScript for Slider -->
   <script>
     let currentIndex = 0;
     const totalSlides = 3;
     const sliderContainer = document.getElementById("sliderContainer");
+    let slideInterval;
 
-    function slideChange() {
-      currentIndex = (currentIndex + 1) % totalSlides;  // Increment index and loop back to 0 after the last slide
-      sliderContainer.style.transform = `translateX(-${currentIndex * 33.33}%)`; // Move the slider horizontally to show the next slide
+    function updateSlide() {
+        sliderContainer.style.transform = `translateX(-${currentIndex * 33.33}%)`;
     }
 
-    // Set an interval to change slides every 3 seconds (3000ms)
-    setInterval(slideChange, 4000);
+    function startSlideShow() {
+        slideInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlide();
+        }, 4000);
+    }
+
+    function stopSlideShow() {
+        clearInterval(slideInterval);
+    }
+
+    function resetAutoSlide() {
+        stopSlideShow();
+        setTimeout(startSlideShow, 5000); // Resume auto-slide after 5 seconds
+    }
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlide();
+        resetAutoSlide();
+    });
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlide();
+        resetAutoSlide();
+    });
+
+    sliderContainer.addEventListener("mouseenter", stopSlideShow);
+    sliderContainer.addEventListener("mouseleave", startSlideShow);
+
+    startSlideShow();
   </script>
 </section>
+
 
 <!-- End Hero Section -->
 
@@ -211,37 +240,39 @@
     <!-- About Us Section -->
     <section id="about-us" class="py-5">
   <div class="container" data-aos="fade-up">
+    
     <!-- First Row -->
     <div class="row align-items-center">
       <div class="col-lg-6" data-aos="fade-right">
-        <h1 style="color: #e03a3c; text-align: justify;">Fourise Software Solutions is a leading provider of Data and AI Technology Solutions</h1>
-        <p style="text-align: justify;">We provide operational efficiency, productivity gains, and cost savings to our clients. We principally consider distinctive IT services together with custom website design and development services. Fourise Technologies India Pvt. Ltd. Pune has impressive services with societal fields and Educational fields, including Software Development, Web Designing, Web Development, Digital Marketing, Android Development, and other services.</p>
+        <h1>Fourise Software Solutions is a leading provider of Data and AI Technology Solutions</h1>
+        <p>We provide operational efficiency, productivity gains, and cost savings to our clients. We principally consider distinctive IT services together with custom website design and development services. Fourise Technologies India Pvt. Ltd. Pune has impressive services with societal fields and Educational fields, including Software Development, Web Designing, Web Development, Digital Marketing, Android Development, and other services.</p>
       </div>
       <div class="col-lg-6 text-center" data-aos="fade-left">
-        <img src="assets/img/FOURISE.png" alt="Company Image" class="img-fluid" style="width: 80%;">
+        <img src="assets/img/FOURISE.png" alt="Company Image" class="img-fluid">
       </div>
     </div>
 
     <!-- Second Row -->
     <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.3.0/dist/dotlottie-wc.js" type="module"></script>
 
-<div class="row mt-5 align-items-center">
-  <div class="col-lg-6" data-aos="fade-right">
-    <!-- Lottie Animation -->
-    <dotlottie-wc src="https://lottie.host/a272ad40-08bf-46ae-9a63-f07120f0f0d2/O8FXpZrWw7.lottie" autoplay loop style="width: 140%; height: auto; margin-right: 3%;"></dotlottie-wc>
-  </div>
-  <div class="col-lg-6 text-right" data-aos="fade-left">
-    <h2 style="color: #e03a3c; font-weight: bold; text-align: justify;">Our Story</h2>
-    <p style="text-align: justify; color: #000;">Fourise Software Solutions Pvt. Ltd. Pune was Established by Four Ideal Persons, in the year 2021, that provides clients with a comprehensive range of solutions including Infrastructure consultancy, onsite/offsite services, custom software development, web development, software and web application testing and enterprise architecture consulting. We strive to deliver rapid, reliable and robust information. Since inception our mission has been to develop partnerships with clients to provide effective and reliable information.</p>
-    <blockquote class="blockquote text-center mt-4">
-      <p class="mb-0" style="color: #e03a3c; text-align: justify;">"Talk to yourself once in a day, otherwise you may miss meeting an intelligent person in this world."</p>
-      <footer class="blockquote-footer">Swami Vivekananda</footer>
-    </blockquote>
-  </div>
-</div>
+    <div class="row mt-5 align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <!-- Lottie Animation -->
+        <dotlottie-wc src="https://lottie.host/a272ad40-08bf-46ae-9a63-f07120f0f0d2/O8FXpZrWw7.lottie" autoplay loop></dotlottie-wc>
+      </div>
+      <div class="col-lg-6 text-right" data-aos="fade-left">
+        <h2>Our Story</h2>
+        <p>Fourise Software Solutions Pvt. Ltd. Pune was Established by Four Ideal Persons, in the year 2021, that provides clients with a comprehensive range of solutions including Infrastructure consultancy, onsite/offsite services, custom software development, web development, software and web application testing and enterprise architecture consulting. We strive to deliver rapid, reliable and robust information. Since inception our mission has been to develop partnerships with clients to provide effective and reliable information.</p>
+        <blockquote class="blockquote text-center mt-4">
+          <p>"Talk to yourself once in a day, otherwise you may miss meeting an intelligent person in this world."</p>
+          <footer class="blockquote-footer">Swami Vivekananda</footer>
+        </blockquote>
+      </div>
+    </div>
 
   </div>
 </section>
+
 
 
 
