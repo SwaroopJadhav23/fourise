@@ -284,7 +284,6 @@
         </div>
     </div>
 </section>
-
 <!-- Pop-Up Form -->
 <div class="popup-form" id="popupForm">
     <div class="form-container">
@@ -347,9 +346,15 @@
         const popupForm = document.getElementById("popupForm");
         popupForm.style.display = "none";
     }
-</script>
 
-    
+    // Close the form when the Escape key is pressed
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeApplicationForm();
+        }
+    });
+</script>
+  
 
 
       <!-- ======= Footer ======= -->
