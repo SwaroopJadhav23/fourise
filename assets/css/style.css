@@ -1212,14 +1212,14 @@ p {
 /*--------------------------------------------------------------
 /* ======= Footer ======= */
 #footer {
-  color: #fff;
+  color: #fff; /* White text for all text inside the footer */
   font-size: 14px;
-  background: #000;
+  background: #000; /* Black background */
 }
 
 #footer .footer-top {
   padding: 60px 0 30px 0;
-  background: #000;
+  background: #000; /* Black background */
 }
 
 #footer .footer-top .footer-contact {
@@ -1230,11 +1230,11 @@ p {
   font-size: 26px;
   line-height: 1;
   font-weight: 700;
-  color: #e03a3c;
+  color: #e03a3c; /* Set color of h3 to #e03a3c */
 }
 
 #footer .footer-top .footer-contact h3 span {
-  color: #e03a3c;
+  color: #e03a3c; /* Set color of span inside h3 to #e03a3c */
 }
 
 #footer .footer-top .footer-contact p {
@@ -1242,8 +1242,7 @@ p {
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Raleway", sans-serif;
-  color: #fff;
-  margin-left: -160px;
+  color: #fff; /* White color for paragraph text */
 }
 
 #footer .footer-top h4 {
@@ -1251,7 +1250,7 @@ p {
   font-weight: bold;
   position: relative;
   padding-bottom: 12px;
-  color: #e03a3c;
+  color: #e03a3c; /* Set color of h4 to #e03a3c */
 }
 
 #footer .footer-top h4::after {
@@ -1277,7 +1276,7 @@ p {
 
 #footer .footer-top .footer-links ul i {
   padding-right: 2px;
-  color: white;
+  color: white; /* White icon color */
   font-size: 18px;
   line-height: 1;
 }
@@ -1293,7 +1292,7 @@ p {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #fff;
+  color: #fff; /* White color for links */
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
@@ -1301,7 +1300,7 @@ p {
 
 #footer .footer-top .footer-links ul a:hover {
   text-decoration: none;
-  color: #e03a3c;
+  color: #e03a3c; /* Red color for hover effect */
 }
 
 #footer .footer-newsletter {
@@ -1313,7 +1312,7 @@ p {
   font-weight: bold;
   position: relative;
   padding-bottom: 12px;
-  color: #e03a3c;
+  color: #e03a3c; /* Set color of h4 to #e03a3c */
 }
 
 #footer .footer-newsletter form {
@@ -1354,14 +1353,14 @@ p {
 #footer .credits {
   padding-top: 5px;
   font-size: 13px;
-  color: #fff;
+  color: #fff; /* White color for credits text */
 }
 
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
   background: #2b2b2b;
-  color: #fff;
+  color: #fff; /* White color for social icons */
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -1380,153 +1379,26 @@ p {
 
 /* ======= Container Section ======= */
 #footer .container.d-md-flex.py-4 {
-  background: black;
-  color: #fff;
+  background: black; /* Black background for this section */
+  color: #fff; /* White text */
   padding-top: 30px;
   padding-bottom: 30px;
 }
 
 #footer .container.d-md-flex.py-4 .copyright {
-  color: #fff;
+  color: #fff; /* White color for copyright text */
 }
 
 #footer .container.d-md-flex.py-4 .credits {
-  color: #fff;
+  color: #fff; /* White color for credits text */
 }
 
 #footer .container.d-md-flex.py-4 .social-links a {
-  background: #2b2b2b;
-  color: #fff;
+  background: #2b2b2b; /* Dark grey background for social icons */
+  color: #fff; /* White color for social icons */
 }
 
 #footer .container.d-md-flex.py-4 .social-links a:hover {
   background: #e03a3c;
   color: #fff;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 767px) {
-  /* Adjust footer sections for small screens */
-  #footer .footer-top {
-    padding: 40px 0;
-  }
-
-  #footer .footer-top .footer-contact h3 {
-    font-size: 22px;
-  }
-
-  #footer .footer-top .footer-contact p {
-    font-size: 12px;
-    margin-left: 0; /* Remove negative margin */
-  }
-
-  #footer .footer-top h4 {
-    font-size: 14px;
-  }
-
-  #footer .footer-top .footer-links ul {
-    padding: 0;
-  }
-
-  #footer .footer-top .footer-links ul li {
-    padding: 8px 0;
-  }
-
-  #footer .footer-top .footer-links ul a {
-    font-size: 14px;
-  }
-
-  #footer .footer-newsletter form {
-    padding: 5px 10px;
-    text-align: left;
-  }
-
-  #footer .footer-newsletter form input[type="email"] {
-    width: calc(100% - 90px);
-  }
-
-  #footer .footer-newsletter form input[type="submit"] {
-    right: 0;
-    width: 80px;
-  }
-
-  #footer .social-links a {
-    font-size: 16px;
-    padding: 6px 0;
-    width: 30px;
-    height: 30px;
-  }
-
-  #footer .social-links a:hover {
-    background: #e03a3c;
-    color: #fff;
-  }
-
-  /* Adjust container layout */
-  #footer .container.d-md-flex.py-4 {
-    flex-direction: column;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-
-  #footer .container.d-md-flex.py-4 .credits,
-  #footer .container.d-md-flex.py-4 .copyright {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  #footer .container.d-md-flex.py-4 .social-links {
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  #footer .container.d-md-flex.py-4 .social-links a {
-    margin-right: 10px;
-  }
-}
-
-/* Tablet Responsiveness (adjustments for medium screens) */
-@media (max-width: 991px) {
-  #footer .footer-top .footer-contact h3 {
-    font-size: 24px;
-  }
-
-  #footer .footer-top .footer-contact p {
-    font-size: 13px;
-  }
-
-  #footer .footer-top .footer-links ul li {
-    padding: 12px 0;
-  }
-
-  #footer .footer-newsletter form {
-    padding: 6px 12px;
-  }
-
-  #footer .footer-newsletter form input[type="email"] {
-    width: calc(100% - 110px);
-  }
-
-  #footer .footer-newsletter form input[type="submit"] {
-    width: 100px;
-  }
-
-  #footer .social-links a {
-    font-size: 18px;
-  }
-
-  #footer .container.d-md-flex.py-4 {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  #footer .container.d-md-flex.py-4 .credits,
-  #footer .container.d-md-flex.py-4 .copyright {
-    margin-bottom: 0;
-  }
-
-  #footer .container.d-md-flex.py-4 .social-links {
-    display: flex;
-    align-items: center;
-  }
 }
