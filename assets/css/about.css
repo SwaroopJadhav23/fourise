@@ -591,14 +591,7 @@ nav {
   }
 }
 
-/* Large Mobile (Phones 375px to 425px) */
-@media (max-width: 425px) {
-  #prevBtn, #nextBtn {
-    display: none;
-  }
-}
-
-/* Larger Mobile (Tablets & Larger Phones, 480px to 768px) */
+/* Large Mobile (Tablets & Large Phones, 480px to 768px) */
 @media (max-width: 768px) {
   .slider-container {
     width: 100%;
@@ -646,6 +639,11 @@ nav {
     padding: 6px 10px;
     font-size: 14px;
   }
+
+  /* Hide Previous and Next buttons on mobile devices */
+  #prevBtn, #nextBtn {
+    display: none;
+  }
 }
 
 /* Medium Mobile (Phones, 360px to 480px) */
@@ -684,6 +682,11 @@ nav {
   #prevBtn, #nextBtn {
     padding: 5px 8px;
     font-size: 12px;
+  }
+
+  /* Hide Previous and Next buttons on mobile devices */
+  #prevBtn, #nextBtn {
+    display: none;
   }
 }
 
@@ -724,7 +727,13 @@ nav {
     padding: 4px 6px;
     font-size: 10px;
   }
+
+  /* Hide Previous and Next buttons on mobile devices */
+  #prevBtn, #nextBtn {
+    display: none;
+  }
 }
+
 
 
 
