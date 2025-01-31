@@ -543,7 +543,62 @@ nav {
 
 /* Mobile Responsive Styles */
 
-/* Large Mobile (Tablets & Large Phones, 480px to 768px) */
+/* Default Styles */
+.slider-container {
+  width: 100%;
+  display: flex;
+  transition: transform 1s ease;
+}
+
+.slide {
+  width: 33.33%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#prevBtn, #nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #e03a3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+/* Hide Previous & Next Buttons on Mobile */
+@media (max-width: 768px) {
+  #prevBtn, #nextBtn {
+    display: none;
+  }
+}
+
+/* Small Mobile (Below 320px) */
+@media (max-width: 320px) {
+  #prevBtn, #nextBtn {
+    display: none;
+  }
+}
+
+/* Medium Mobile (Phones 320px to 375px) */
+@media (max-width: 375px) {
+  #prevBtn, #nextBtn {
+    display: none;
+  }
+}
+
+/* Large Mobile (Phones 375px to 425px) */
+@media (max-width: 425px) {
+  #prevBtn, #nextBtn {
+    display: none;
+  }
+}
+
+/* Larger Mobile (Tablets & Larger Phones, 480px to 768px) */
 @media (max-width: 768px) {
   .slider-container {
     width: 100%;
@@ -670,6 +725,7 @@ nav {
     font-size: 10px;
   }
 }
+
 
 
 

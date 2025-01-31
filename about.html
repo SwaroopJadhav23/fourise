@@ -115,7 +115,8 @@
   <!-- ======= Hero Section with Horizontal Slider ======= -->
 
 
-<!-- ======= Hero Section with Horizontal Slider ======= --><section id="hero" class="d-flex align-items-center" style="background-color: #f8f9fa; padding: 60px 0; margin-top: 2%;">
+<!-- ======= Hero Section with Horizontal Slider ======= -->
+<section id="hero" class="d-flex align-items-center" style="background-color: #f8f9fa; padding: 60px 0; margin-top: 2%;">
   <div class="container-fluid" data-aos="zoom-out" data-aos-delay="100">
     <div class="row justify-content-center">
       <div class="col-xl-10">
@@ -164,8 +165,10 @@
             </div>
 
             <!-- Previous & Next Buttons -->
-            <button id="prevBtn" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background-color: #e03a3c; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; z-index: 10;">❮</button>
-            <button id="nextBtn" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: #e03a3c; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; z-index: 10;">❯</button>
+            <!-- Previous & Next Buttons (hidden on mobile) -->
+<button id="prevBtn" class="slider-btn" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);">❮</button>
+<button id="nextBtn" class="slider-btn" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%);">❯</button>
+
 
           </div>
         </div>
@@ -178,46 +181,80 @@
   <!-- JavaScript for Slider -->
   <script>
     let currentIndex = 0;
-    const totalSlides = 3;
-    const sliderContainer = document.getElementById("sliderContainer");
-    let slideInterval;
+const totalSlides = 3;
+const sliderContainer = document.getElementById("sliderContainer");
+let slideInterval;
+let startTouchX = 0;
+let endTouchX = 0;
 
-    function updateSlide() {
-        sliderContainer.style.transform = `translateX(-${currentIndex * 33.33}%)`;
-    }
+// Update Slide
+function updateSlide() {
+    sliderContainer.style.transform = `translateX(-${currentIndex * 33.33}%)`;
+}
 
-    function startSlideShow() {
-        slideInterval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateSlide();
-        }, 4000);
-    }
+// Start Slideshow
+function startSlideShow() {
+    slideInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlide();
+    }, 4000);
+}
 
-    function stopSlideShow() {
-        clearInterval(slideInterval);
-    }
+// Stop Slideshow
+function stopSlideShow() {
+    clearInterval(slideInterval);
+}
 
-    function resetAutoSlide() {
-        stopSlideShow();
-        setTimeout(startSlideShow, 5000); // Resume auto-slide after 5 seconds
-    }
+// Reset Auto Slide after manual change
+function resetAutoSlide() {
+    stopSlideShow();
+    setTimeout(startSlideShow, 5000); // Resume auto-slide after 5 seconds
+}
 
-    document.getElementById("nextBtn").addEventListener("click", () => {
+// Next Button Event
+document.getElementById("nextBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlide();
+    resetAutoSlide();
+});
+
+// Previous Button Event
+document.getElementById("prevBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlide();
+    resetAutoSlide();
+});
+
+// Pause Slideshow on Mouse Hover
+sliderContainer.addEventListener("mouseenter", stopSlideShow);
+sliderContainer.addEventListener("mouseleave", startSlideShow);
+
+// Start Slideshow on page load
+startSlideShow();
+
+// Swipe Gesture Support for Mobile
+sliderContainer.addEventListener("touchstart", (event) => {
+    startTouchX = event.touches[0].clientX;
+}, { passive: true });
+
+sliderContainer.addEventListener("touchmove", (event) => {
+    endTouchX = event.touches[0].clientX;
+}, { passive: true });
+
+sliderContainer.addEventListener("touchend", () => {
+    if (startTouchX - endTouchX > 50) {
+        // Swipe Left (Next Slide)
         currentIndex = (currentIndex + 1) % totalSlides;
         updateSlide();
         resetAutoSlide();
-    });
-
-    document.getElementById("prevBtn").addEventListener("click", () => {
+    } else if (endTouchX - startTouchX > 50) {
+        // Swipe Right (Previous Slide)
         currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
         updateSlide();
         resetAutoSlide();
-    });
+    }
+});
 
-    sliderContainer.addEventListener("mouseenter", stopSlideShow);
-    sliderContainer.addEventListener("mouseleave", startSlideShow);
-
-    startSlideShow();
   </script>
 </section>
 
