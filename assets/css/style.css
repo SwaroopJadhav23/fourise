@@ -499,7 +499,7 @@ nav {
 #hero h1 {
   font-size: 48px;
   font-weight: 700;
-  color: #111111;
+  color: black;
   margin-bottom: 10px;  /* Space between h1 and subtitle */
   text-align: left;  /* Ensure heading is left-aligned */
 }
@@ -507,7 +507,7 @@ nav {
 /* Hero Subtitle (aligns left) */
 .hero-subtitle {
   font-size: 26px; 
-  color: #333333;
+  color: black;
   margin-top: 10px;  /* Space between h1 and h2 */
   text-align: left; /* Ensure subtitle is left-aligned */
   font-weight: 500; 
