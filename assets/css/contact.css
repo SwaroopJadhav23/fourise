@@ -504,6 +504,7 @@ h1, h2, h3, h4, h5, h6 {
 .col-lg-6 {
   width: 48%; /* Both columns take up equal width */
   margin-bottom: 30px; /* Add spacing between the two columns */
+  margin-top: 60px;
 }
 
 /* Left Side Content Styling */
@@ -512,6 +513,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Box shadow for left side */
+  margin-top: 5%;
 }
 
 .content h3 {
