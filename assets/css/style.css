@@ -872,17 +872,29 @@ section {
 
 
 /*--------------------------------------------------------------
-/* Updated Section Styling */
+/* Section Styling */
 #features {
   background: #f8f9fa;
   padding: 80px 0;
 }
 
-#features h3 {
+#features h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  color: black;
+}
+
+#features .section-title {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 20px;
   text-align: center;
+}
+
+#features .highlight-text {
+  color: #e03a3c;
 }
 
 #features .row {
@@ -933,6 +945,27 @@ section {
 #features ul li span {
   font-size: 22px;
   margin-right: 10px;
+}
+
+/* Bullet color classes */
+.bullet-red {
+  color: #e03a3c;
+}
+
+.bullet-blue {
+  color: #4e73df;
+}
+
+.bullet-green {
+  color: #1cc88a;
+}
+
+.bullet-teal {
+  color: #36b9cc;
+}
+
+.bullet-pink {
+  color: #f8d7da;
 }
 
 
