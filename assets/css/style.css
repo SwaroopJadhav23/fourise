@@ -483,27 +483,38 @@ nav {
 #hero {
   width: 100%;
   height: 100vh;
-  padding-top: 82px;
+  padding: 50px;
+  margin-top: 10px;
   background: #fff;
-  overflow: hidden; /* Ensure no overflow occurs here */
+  overflow: hidden;
   display: flex;
-  align-items: center;
+  flex-direction: column;  /* Stack the content vertically */
+  align-items: flex-start;  /* Align items to the left */
   position: relative;
+  justify-content: center; /* Center content vertically */
+  text-align: left; /* Ensure all text is left-aligned */
 }
 
+/* Headings */
 #hero h1 {
   font-size: 48px;
   font-weight: 700;
-  color: #111111; /* Dark text for better contrast */
-  margin-bottom: 20px;
-}
-
-#hero h2 {
-  font-size: 24px;
   color: #111111;
-  margin-bottom: 30px;
+  margin-bottom: 10px;  /* Space between h1 and subtitle */
+  text-align: left;  /* Ensure heading is left-aligned */
 }
 
+/* Hero Subtitle 1 */
+.hero-subtitle-1 {
+  font-size: 26px; /* Slightly larger than other subtitles */
+  color: #333333; /* Darker color for better visibility */
+  margin-bottom: 20px; /* Space between subtitle and buttons *
+  font-weight: 500; /* Medium font weight */
+  letter-spacing: 1px; /* Add some spacing between characters */
+  margin-left: -50px; /* Ensure no extra left margin */
+}
+
+/* Buttons */
 #hero .btn-get-started {
   font-family: "Raleway", sans-serif;
   font-weight: 500;
@@ -526,25 +537,15 @@ nav {
   border: 2px solid #e03a3c;
 }
 
-/* Right Lottie Animation Styling */
-.hero-image {
-  text-align: center;
-  position: absolute;
-  top: 0;
-  right: 10%;
-  bottom: 0;
-  left: 20%;
-  z-index: -1; /* Ensure the animation stays behind the content */
-  width: 160%; /* Increased width for the animation */
+/* Right Lottie Animation */
+.hero-animation {
+  width: 100%; /* Adjust to fit container */
+  height: auto;
+  max-width: 700px;
+  max-height: 600px;
+  margin-top: 20px; /* Add margin to separate from text */
 }
 
-.hero-image dotlottie-wc {
-  width: 100%; /* Set animation width to 100% of the container */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: contain; /* Ensure animation fits within the container */
-  margin-top: 30px; /* Add margin-top for some separation */
-  margin-bottom: 20px; /* Optional margin for spacing */
-}
 
 /* For mobile responsiveness */
 @media (max-width: 768px) { /* Mobile L (425px) */
