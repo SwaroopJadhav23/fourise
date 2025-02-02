@@ -559,7 +559,7 @@ nav {
 
 #prevBtn, #nextBtn {
   position: absolute;
-  top: 50%;
+  top: 70%;
   transform: translateY(-50%);
   background-color: #e03a3c;
   color: white;
@@ -570,28 +570,54 @@ nav {
   z-index: 10;
 }
 
-/* Hide Previous & Next Buttons on Mobile */
-@media (max-width: 768px) {
-  #prevBtn, #nextBtn {
-    display: none;
-  }
+/* Lottie Animation Default */
+.lottie-animation {
+  width: 100%;
+  max-width: 300px; /* Adjust as needed */
+  margin: 0 auto;
+  display: block;
 }
 
-/* Small Mobile (Below 320px) */
+/* Small Mobile (320px) */
 @media (max-width: 320px) {
   #prevBtn, #nextBtn {
-    display: none;
+    top: 75%;
+    margin-top: 10px;
+  }
+
+  .lottie-animation {
+    margin-top: -20px;
+    margin-left: -10px;
   }
 }
 
-/* Medium Mobile (Phones 320px to 375px) */
+/* Medium Mobile (375px) */
 @media (max-width: 375px) {
   #prevBtn, #nextBtn {
-    display: none;
+    top: 57%;
+    margin-top: 12px;
+  }
+
+  .lottie-animation {
+    margin-top: -25px;
+    margin-left: -15px;
   }
 }
 
-/* Large Mobile (Tablets & Large Phones, 480px to 768px) */
+/* Large Mobile (425px) */
+@media (max-width: 425px) {
+  #prevBtn, #nextBtn {
+    top: 70%;
+    margin-top: 15px;
+  }
+
+  .lottie-animation {
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+}
+
+/* Tablet (768px) */
 @media (max-width: 768px) {
   .slider-container {
     width: 100%;
@@ -634,32 +660,21 @@ nav {
     padding: 8px 16px;
   }
 
-  /* Smaller Previous & Next buttons */
   #prevBtn, #nextBtn {
+    top: 62%;
+    margin-top: 20px;
     padding: 6px 10px;
     font-size: 14px;
   }
 
-  /* Hide Previous and Next buttons on mobile devices */
-  #prevBtn, #nextBtn {
-    display: none;
+  .lottie-animation {
+    margin-top: 40px;
+    margin-left: 30px;
   }
 }
 
 /* Medium Mobile (Phones, 360px to 480px) */
 @media (max-width: 480px) {
-  .slider-container {
-    width: 100%;
-    display: block;
-  }
-
-  .slide {
-    width: 100%;
-    padding: 15px;
-    display: block;
-    justify-content: center;
-  }
-
   .slide h1 {
     font-size: 22px;
   }
@@ -678,32 +693,14 @@ nav {
     padding: 6px 12px;
   }
 
-  /* Smaller Previous & Next buttons */
-  #prevBtn, #nextBtn {
-    padding: 5px 8px;
-    font-size: 12px;
-  }
-
-  /* Hide Previous and Next buttons on mobile devices */
-  #prevBtn, #nextBtn {
-    display: none;
+  .lottie-animation {
+    margin-top: 35px;
+    margin-left: 25px;
   }
 }
 
 /* Small Mobile (Extra Small Phones, Below 360px) */
 @media (max-width: 360px) {
-  .slider-container {
-    width: 100%;
-    display: block;
-  }
-
-  .slide {
-    width: 100%;
-    padding: 12px;
-    display: block;
-    justify-content: center;
-  }
-
   .slide h1 {
     font-size: 20px;
   }
@@ -722,18 +719,12 @@ nav {
     padding: 4px 8px;
   }
 
-  /* Smaller Previous & Next buttons */
-  #prevBtn, #nextBtn {
-    padding: 4px 6px;
-    font-size: 10px;
-  }
-
-  /* Hide Previous and Next buttons on mobile devices */
-  #prevBtn, #nextBtn {
-    display: none;
+  .lottie-animation {
+    margin-top: 30px;
+    margin-left: 15px;
   }
 }
-
+  
 
 
 
