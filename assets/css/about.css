@@ -454,7 +454,10 @@ nav {
 /*--------------------------------------------------------------
 /* Hero Section */
 
-/* Slider Wrapper */
+/* ===================== */
+/* Default Styles */
+/* ===================== */
+
 .slider-wrapper {
   overflow: hidden;
   position: relative;
@@ -489,6 +492,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: white;
+  position: relative;
 }
 
 .slide > div:first-child {
@@ -540,6 +544,207 @@ nav {
 .btn-get-started:hover {
   background-color: #c03032;
 }
+
+/* ===================== */
+/* Next & Previous Buttons */
+/* ===================== */
+
+#prevBtn, #nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #e03a3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+/* Small Mobile (320px) */
+@media (max-width: 320px) {
+  #prevBtn, #nextBtn {
+    top: 55%;
+    margin-top: 10px;
+  }
+}
+
+/* Medium Mobile (375px) */
+@media (max-width: 375px) {
+  #prevBtn, #nextBtn {
+    top: 57%;
+    margin-top: 12px;
+  }
+}
+
+/* Large Mobile (425px) */
+@media (max-width: 425px) {
+  #prevBtn, #nextBtn {
+    top: 60%;
+    margin-top: 15px;
+  }
+}
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+  #prevBtn, #nextBtn {
+    top: 62%;
+    margin-top: 20px;
+  }
+}
+
+/* ===================== */
+/* Mobile Responsive Slider */
+/* ===================== */
+
+/* Small Mobile (320px) */
+@media (max-width: 320px) {
+  .slider-container {
+    width: 100%;
+    display: block;
+  }
+
+  .slide {
+    width: 100%;
+    padding: 10px;
+    display: block;
+    text-align: center;
+  }
+
+  .slide h1 {
+    font-size: 20px;
+  }
+
+  .slide h2 {
+    font-size: 16px;
+  }
+
+  .slide p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .btn-get-started {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}
+
+/* Medium Mobile (375px) */
+@media (max-width: 375px) {
+  .slide {
+    padding: 12px;
+  }
+
+  .slide h1 {
+    font-size: 22px;
+  }
+
+  .slide h2 {
+    font-size: 18px;
+  }
+
+  .slide p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+/* Large Mobile (425px) */
+@media (max-width: 425px) {
+  .slide {
+    padding: 15px;
+  }
+
+  .slide h1 {
+    font-size: 24px;
+  }
+
+  .slide h2 {
+    font-size: 20px;
+  }
+
+  .slide p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+  .slide {
+    padding: 20px;
+  }
+
+  .slide h1 {
+    font-size: 26px;
+  }
+
+  .slide h2 {
+    font-size: 22px;
+  }
+
+  .slide p {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+}
+
+/* ===================== */
+/* Lottie Animation Styling */
+/* ===================== */
+
+/* Default Lottie Animation */
+.lottie-animation {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+/* Small Mobile (320px) */
+@media (max-width: 320px) {
+  .lottie-animation {
+    top: 10px;
+    left: 10px;
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Medium Mobile (375px) */
+@media (max-width: 375px) {
+  .lottie-animation {
+    top: 12px;
+    left: 12px;
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* Large Mobile (425px) */
+@media (max-width: 425px) {
+  .lottie-animation {
+    top: 15px;
+    left: 15px;
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+  .lottie-animation {
+    top: 20px;
+    left: 20px;
+    width: 180px;
+    height: 180px;
+  }
+}
+
+  
 
 
 
