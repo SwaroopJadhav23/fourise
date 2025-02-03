@@ -695,13 +695,13 @@ nav {
   }
 
   .text p {
-    font-size: 2.0rem;
+    font-size: 0.9rem;
     word-wrap: break-word; /* Prevent text overflow */
     line-height: 1.4;
   }
 
   .text ul li {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -710,12 +710,12 @@ nav {
 /* iPhone SE, older small phones (max-width: 375px) */
 @media screen and (max-width: 375px) {
   .products h1 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-top: 50%;
   }
 
   .products h2 {
-    font-size: 1.0rem;
+    font-size: 1.2rem;
   }
 
   .product-section {
@@ -743,11 +743,11 @@ nav {
   }
 
   .text h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .text p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     word-wrap: break-word;
     line-height: 1.3;
   }
