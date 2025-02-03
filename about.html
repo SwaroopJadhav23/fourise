@@ -116,98 +116,120 @@
 
 
 <!-- ======= Hero Section with Horizontal Slider ======= -->
-<section id="hero" class="d-flex align-items-center" style="background-color: #f8f9fa; padding: 40px 0; margin-top: 2%;">
+<section id="hero" class="d-flex align-items-center" style="background-color: #f8f9fa; padding: 60px 0; margin-top: 2%;">
   <div class="container-fluid" data-aos="zoom-out" data-aos-delay="100">
     <div class="row justify-content-center">
       <div class="col-xl-10">
-        <div class="slider-wrapper">
-          <!-- Navigation Buttons -->
-          <button class="prev-btn">&#10094;</button>
-          <button class="next-btn">&#10095;</button>
+        <div class="row">
+          <!-- Slider Container -->
+          <div class="col-xl-12" style="overflow: hidden; position: relative; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); border-radius: 10px; margin-bottom: 20px;">
+            <div id="sliderContainer" class="slider-container" style="display: flex; transition: transform 0.5s ease; width: 300%; touch-action: pan-y;">
 
-          <div class="slider-container" id="sliderContainer">
-            <!-- Slide 1 -->
-            <div class="slide">
-              <div>
-                <dotlottie-wc src="https://lottie.host/4e91e3cc-3bf3-4a81-bcfe-faace7c88d8c/IhBY7pLZJ2.lottie" autoplay loop></dotlottie-wc>
+              <!-- Slide 1 -->
+              <div class="slide" style="width: 32.33%; display: flex; align-items: center; justify-content: space-between;">
+                <!-- Lottie Animation -->
+                <div style="flex: 1;">
+                  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.3.0/dist/dotlottie-wc.js" type="module"></script>
+                  <dotlottie-wc src="https://lottie.host/4e91e3cc-3bf3-4a81-bcfe-faace7c88d8c/IhBY7pLZJ2.lottie" autoplay loop style="width: 100%; height: auto; margin-left: -10%;"></dotlottie-wc>
+                </div>
+                <!-- Heading and Text -->
+                <div style="flex: 1; text-align: justify; padding-left: 10px;">
+                  <h1 style="color: #e03a3c; font-weight: bold; text-align: justify;">Create Mobile Apps With us</h1>
+                  <p>Every business wants to become easier for clients so mobile applications perform such wonderful tasks.</p>
+                  <a href="contact.php" class="btn-get-started scrollto">Contact us</a>
+                </div>
               </div>
-              <div>
-                <h1>Create Mobile Apps With Us</h1>
-                <p>Every business wants to become easier for clients so mobile applications perform such wonderful tasks.</p>
-                <a href="contact.php" class="btn-get-started">Contact us</a>
-              </div>
-            </div>
 
-            <!-- Slide 2 -->
-            <div class="slide">
-              <div>
-                <dotlottie-wc src="https://lottie.host/1c50b72e-37e9-4b2b-92c6-bf177edf697f/U4aMOcEXhv.lottie" autoplay loop></dotlottie-wc>
+              <!-- Slide 2 -->
+              <div class="slide" style="width: 32.33%; display: flex; align-items: center; justify-content: space-between;">
+                <!-- Lottie Animation -->
+                <div style="flex: 1;">
+                  <dotlottie-wc src="https://lottie.host/1c50b72e-37e9-4b2b-92c6-bf177edf697f/U4aMOcEXhv.lottie" autoplay loop style="width: 100%; height: auto;"></dotlottie-wc>
+                </div>
+                <!-- Heading and Text -->
+                <div style="flex: 1; text-align: justify; padding-left: 20px;">
+                  <h1 style="color: #e03a3c; font-weight: bold; text-align: justify;">Create Websites With us</h1>
+                  <p>We provide all business Websites with minimum cost. Also Web applications for spreading your business over the Internet.</p>
+                  <a href="web.php" class="btn-get-started scrollto">Get in touch</a>
+                </div>
               </div>
-              <div>
-                <h1>Create Websites With Us</h1>
-                <p>We provide business websites at minimal cost, helping you spread your business online.</p>
-                <a href="web.php" class="btn-get-started">Get in touch</a>
-              </div>
-            </div>
 
-            <!-- Slide 3 -->
-            <div class="slide">
-              <div>
-                <dotlottie-wc src="https://lottie.host/0a4f7e33-a355-4817-96ae-f448fb7dfcd0/MADGerX19k.lottie" autoplay loop></dotlottie-wc>
+              <!-- Slide 3 -->
+              <div class="slide" style="width: 32.33%; display: flex; align-items: center; justify-content: space-between;">
+                <!-- Lottie Animation -->
+                <div style="flex: 1;">
+                  <dotlottie-wc src="https://lottie.host/0a4f7e33-a355-4817-96ae-f448fb7dfcd0/MADGerX19k.lottie" autoplay loop style="width: 100%; height: auto;"></dotlottie-wc>
+                </div>
+                <!-- Heading and Text -->
+                <div style="flex: 1; text-align: justify; padding-left: 20px;">
+                  <h1 style="color: #e03a3c; font-weight: bold; text-align: justify;">Develop RPA Projects With Us</h1>
+                  <p>Robotic Process Automation Solicite Daily human tasks into the machine process.</p>
+                  <a href="rpa-internship.php" class="btn-get-started scrollto">Contact us</a>
+                </div>
               </div>
-              <div>
-                <h1>Develop RPA Projects With Us</h1>
-                <p>Robotic Process Automation (RPA) helps automate daily human tasks efficiently.</p>
-                <a href="rpa-internship.php" class="btn-get-started">Contact us</a>
-              </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- Horizontal Line -->
+    <hr style="border: 1px solid #e03a3c; margin: 20px 0;">
   </div>
 
-  <!-- JavaScript for Slider -->
+  <!-- JavaScript for Slide Transition and Swipe Gesture -->
   <script>
     let currentIndex = 0;
-    const totalSlides = document.querySelectorAll('.slide').length;
+    const totalSlides = 3;
     const sliderContainer = document.getElementById("sliderContainer");
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let autoSlide;
 
-    function updateSlide() {
-      sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    document.querySelector(".next-btn").addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      updateSlide();
-    });
-
-    document.querySelector(".prev-btn").addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-      updateSlide();
-    });
-
-    let startX = 0;
-    sliderContainer.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].clientX;
-    });
-
-    sliderContainer.addEventListener("touchend", (e) => {
-      let endX = e.changedTouches[0].clientX;
-      if (startX - endX > 50) {
+    function slideChange(next = true) {
+      if (next) {
         currentIndex = (currentIndex + 1) % totalSlides;
-      } else if (endX - startX > 50) {
+      } else {
         currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
       }
-      updateSlide();
+      sliderContainer.style.transform = `translateX(-${currentIndex * 33.33}%)`;
+    }
+
+    function autoSlideStart() {
+      autoSlide = setInterval(() => slideChange(true), 4000);
+    }
+
+    function autoSlideStop() {
+      clearInterval(autoSlide);
+    }
+
+    // Swipe Detection
+    sliderContainer.addEventListener("touchstart", (e) => {
+      touchStartX = e.touches[0].clientX;
+      autoSlideStop(); // Stop auto-slide when user interacts
     });
 
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      updateSlide();
-    }, 4000);
+    sliderContainer.addEventListener("touchmove", (e) => {
+      touchEndX = e.touches[0].clientX;
+    });
+
+    sliderContainer.addEventListener("touchend", () => {
+      let swipeDistance = touchStartX - touchEndX;
+
+      if (swipeDistance > 50) {
+        slideChange(true); // Swipe left to next slide
+      } else if (swipeDistance < -50) {
+        slideChange(false); // Swipe right to previous slide
+      }
+
+      autoSlideStart(); // Restart auto-slide after user interaction
+    });
+
+    // Start auto-slide
+    autoSlideStart();
   </script>
 </section>
+
 
 
 
