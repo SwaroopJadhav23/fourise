@@ -600,11 +600,11 @@ nav {
   }
 
   .product-section .text.left {
-    margin-left: -5%;
+    margin-left: -10%;
   }
 
   .product-section .text.right {
-    margin-right: -5%;
+    margin-right: -10%;
       }
 
   .product-section img,
@@ -622,7 +622,7 @@ nav {
   }
 
   .text ul li {
-    font-size: 0.8rem;
+    font-size: 0.5rem;
   }
 }
 
@@ -649,13 +649,13 @@ nav {
   }
 
   .product-section .text.left {
-    margin-left: -5%;
+    margin-left: -10%;
   }
 
   .product-section .text.right {
-    margin-right: -5%;
+    margin-right: -10%;
       }
-      
+
   .product-section .image {
     width: 100%;
     padding: 8px;
@@ -667,7 +667,7 @@ nav {
 
   .text p,
   .text ul li {
-    font-size: 0.75rem;
+    font-size: 0.5rem;
   }
 }
 
@@ -692,11 +692,11 @@ nav {
   }
 
   .product-section .text.left {
-    margin-left: -5%;
+    margin-left: -10%;
   }
 
   .product-section .text.right {
-    margin-right: -5%;
+    margin-right: -10%;
       }
   .product-section .image {
     width: 100%;
@@ -714,7 +714,7 @@ nav {
 
   .text p,
   .text ul li {
-    font-size: 0.7rem;
+    font-size: 0.5rem;
   }
 }
 
