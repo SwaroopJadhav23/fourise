@@ -626,16 +626,96 @@ nav {
   }
 }
 
+/* 🛠 MOBILE RESPONSIVE FIXES WITH -20% MARGIN */
+
+/* Tablet (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .products h1 {
+    font-size: 1.8rem;
+    margin-top: 2%;
+  }
+
+  .products h2 {
+    font-size: 1.2rem;
+  }
+
+  .product-section {
+    height: auto;
+    flex-direction: column;
+    padding: 0 3%;
+  }
+
+  .product-section .text,
+  .product-section .image {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* Mobile Screens (max-width: 425px) */
+@media screen and (max-width: 425px) {
+  .products h1 {
+    font-size: 1.5rem;
+    margin-top: 30%;
+  }
+
+  .products h2 {
+    font-size: 1rem;
+  }
+
+  .product-section {
+    flex-direction: column;
+    height: auto;
+    padding: 0 5%;
+  }
+
+  .product-section .text,
+  .product-section .image {
+    width: 100%;
+    padding: 10px;
+    max-width: 100%; /* Prevent overflow */
+  }
+
+  .product-section .text.left {
+    margin-left: -20%; /* Reduced from -20% */
+  }
+
+  .product-section .text.right {
+    margin-right: -20%; /* Reduced from -20% */
+  }
+
+  .product-section img,
+  .product-section object {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .text h3 {
+    font-size: 1.2rem;
+  }
+
+  .text p {
+    font-size: 0.4rem;
+    word-wrap: break-word; /* Prevent text overflow */
+    line-height: 1.4;
+  }
+
+  .text ul li {
+    font-size: 0.3rem;
+  }
+}
+
 /* 🛠 Additional Fixes for 375px and 320px */
 
 /* iPhone SE, older small phones (max-width: 375px) */
 @media screen and (max-width: 375px) {
   .products h1 {
     font-size: 1.3rem;
+    margin-top: 50%;
   }
 
   .products h2 {
-    font-size: 0.9rem;
+    font-size: 1.0rem;
   }
 
   .product-section {
@@ -646,15 +726,16 @@ nav {
     width: 100%;
     padding: 8px;
     text-align: center;
+    max-width: 100%;
   }
 
   .product-section .text.left {
-    margin-left: -10%;
+    margin-left: -15%; /* Further reduced */
   }
 
   .product-section .text.right {
-    margin-right: -10%;
-      }
+    margin-right: -15%; /* Further reduced */
+  }
 
   .product-section .image {
     width: 100%;
@@ -665,9 +746,14 @@ nav {
     font-size: 1rem;
   }
 
-  .text p,
+  .text p {
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    line-height: 1.3;
+  }
+
   .text ul li {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -679,7 +765,7 @@ nav {
   }
 
   .products h2 {
-    font-size: 0.85rem;
+    font-size: 1.0rem;
   }
 
   .product-section {
@@ -690,15 +776,17 @@ nav {
     width: 100%;
     padding: 5px;
     text-align: center;
+    max-width: 100%;
   }
 
   .product-section .text.left {
-    margin-left: -7%;
+    margin-left: -2%; /* Minimal negative margin */
   }
 
   .product-section .text.right {
-    margin-right: -7%;
-      }
+    margin-right: -2%; /* Minimal negative margin */
+  }
+
   .product-section .image {
     width: 100%;
     padding: 5px;
@@ -713,11 +801,18 @@ nav {
     font-size: 0.9rem;
   }
 
-  .text p,
+  .text p {
+    font-size: 0.75rem;
+    word-wrap: break-word;
+    line-height: 1.3;
+    text-align: justify;
+  }
+
   .text ul li {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 }
+
 
 
 
