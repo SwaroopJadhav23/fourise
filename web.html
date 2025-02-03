@@ -188,6 +188,58 @@
     </div>
 </section>
 
+<script>
+// JavaScript to adjust margin-top of the <h1> heading dynamically
+window.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('header'); // Your navbar ID
+    const h1 = document.querySelector('.web-development-section h1'); // Your h1 tag
+    const headerHeight = window.getComputedStyle(header).height; // Get the navbar height
+    const h1Height = h1.offsetHeight; // Get the h1 height
+    const windowWidth = window.innerWidth; // Get the window width
+
+    // Customizable margin multipliers for each screen size
+    const marginMultipliers = {
+        320: 6,  // Reduce margin more for 320px
+        375: 6,    // Moderate reduction for 375px
+        425: 6,  // Slight reduction for 425px
+        default: 6 // Default margin for larger screens (no change)
+    };
+
+    let marginTop;
+
+    if (windowWidth <= 320) {
+        marginTop = parseInt(headerHeight) + parseInt(h1Height) / marginMultipliers[320] + 'px';
+    } else if (windowWidth <= 375) {
+        marginTop = parseInt(headerHeight) + parseInt(h1Height) / marginMultipliers[375] + 'px';
+    } else if (windowWidth <= 425) {
+        marginTop = parseInt(headerHeight) + parseInt(h1Height) / marginMultipliers[425] + 'px';
+    } else {
+        marginTop = parseInt(headerHeight) + parseInt(h1Height) / marginMultipliers.default + 'px';
+    }
+
+    // Apply the calculated margin-top to the <h1>
+    h1.style.marginTop = marginTop;
+
+    // Add event listener for window resize to update margin-top dynamically on resize
+    window.addEventListener('resize', () => {
+        const newHeaderHeight = window.getComputedStyle(header).height;
+        const newWindowWidth = window.innerWidth;
+
+        if (newWindowWidth <= 320) {
+            marginTop = parseInt(newHeaderHeight) + parseInt(h1Height) / marginMultipliers[320] + 'px';
+        } else if (newWindowWidth <= 375) {
+            marginTop = parseInt(newHeaderHeight) + parseInt(h1Height) / marginMultipliers[375] + 'px';
+        } else if (newWindowWidth <= 425) {
+            marginTop = parseInt(newHeaderHeight) + parseInt(h1Height) / marginMultipliers[425] + 'px';
+        } else {
+            marginTop = parseInt(newHeaderHeight) + parseInt(h1Height) / marginMultipliers.default + 'px';
+        }
+
+        h1.style.marginTop = marginTop;
+    });
+});
+</script>
+
 <!-- Add the JavaScript for Scroll Effect -->
 <script>
     // Function to add 'visible' class when element comes into view
@@ -213,6 +265,7 @@
         });
     });
 </script>
+
 
 
 

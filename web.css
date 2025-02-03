@@ -468,16 +468,7 @@ nav {
     margin-bottom: 20px;
     font-weight: bold;
     text-align: center; /* Center the h1 */
-    margin-top: 3%;
-}
-
-.web-development-section p {
-    font-size: 18px;
-    color: #000; /* Black text for paragraphs */
-    margin-bottom: 40px;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: left; /* Align text to the left */
+    /* Removed margin-top as it's handled dynamically by JavaScript */
 }
 
 /* Section Styling */
@@ -558,17 +549,18 @@ nav {
 
 /* Trigger Animation on Scroll */
 .web-development, .web-application {
-    animation: fadeIn 1s ease-out forwards;
+    animation: fadeIn 1s ease-out;
 }
 
-/* Responsive Design */
+/* Responsiveness for smaller screens */
 @media (max-width: 768px) {
-    .web-content-container {
-        grid-template-columns: 1fr;
+    .web-development-section {
+        padding: 20px 15px;
     }
 
-    .web-development, .web-application {
-        max-width: 100%;
+    .web-content-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 
     .web-development h2, .web-application h2 {
@@ -578,21 +570,38 @@ nav {
     .web-development h3, .web-application h3 {
         font-size: 20px;
     }
-}
 
-/* Mobile S (320px) */
-@media (max-width: 320px) {
-    .web-development-section h1 {
-        margin-top: 16%; /* Increased top margin for Mobile S */
+    .web-development p, .web-application p {
+        font-size: 14px;
+    }
+
+    .web-development li, .web-application li {
+        font-size: 14px;
     }
 }
 
-/* Mobile M (375px) */
-@media (max-width: 375px) {
+@media (max-width: 480px) {
     .web-development-section h1 {
-        margin-top: 16%; /* Slightly increased top margin for Mobile M */
+        font-size: 28px; /* Slightly smaller heading size for mobile */
+    }
+
+    .web-development-section {
+        padding: 10px 10px;
+    }
+
+    .web-development h2, .web-application h2 {
+        font-size: 20px;
+    }
+
+    .web-development h3, .web-application h3 {
+        font-size: 18px;
+    }
+
+    .web-development p, .web-application p {
+        font-size: 12px;
     }
 }
+
 
 
 
