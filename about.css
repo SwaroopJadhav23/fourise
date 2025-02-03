@@ -455,90 +455,78 @@ nav {
 /* Hero Section */
 /* Slider Wrapper */
 .slider-wrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  margin-bottom: 20px;
+  overflow: hidden; /* Hide the part of the slider that is not visible */
+  position: relative; /* This allows positioning of slider container inside */
+  width: 100%; /* Ensure the slider takes full available width */
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add shadow effect below the slider */
+  margin-bottom: 20px; /* Space below the slider for the line */
+}
+
+/* Slider Container (holds all slides) */
+.slider-container {
+  display: flex; /* Arrange the slides horizontally */
+  transition: transform 1s ease; /* Smooth transition for sliding */
+  width: 300%; /* Adjust width based on the number of slides */
   background-color: white;
 }
 
-/* Navigation Buttons */
-.prev-btn, .next-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 12px 16px;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 10;
-  font-size: 18px;
-}
-
-.prev-btn { left: 15px; }
-.next-btn { right: 15px; }
-
-.prev-btn:hover, .next-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Slider Container */
-.slider-container {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 300%; /* Adjust width based on the number of slides */
+/* Add a horizontal line below the slider */
+.slider-wrapper::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #e03a3c; /* Red color for the line */
+  margin-top: 10px; /* Space between slider and the line */
 }
 
 /* Individual Slide */
 .slide {
-  width: 100%;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: white;
+  width: 33.33%; /* Make each slide take 1/3 of the container width */
+  flex-shrink: 0; /* Prevent slides from shrinking */
+  padding: 20px; /* Add padding for content */
+  box-sizing: border-box; /* Include padding in the element's total width */
+  display: flex; /* Align content inside each slide */
+  justify-content: space-between; /* Ensure content is spaced between Lottie and text */
+  align-items: center; /* Center vertically */
+  background-color: white; /* Background color for each slide */
 }
 
 /* Lottie Animation Container */
 .slide > div:first-child {
   flex: 1;
-  padding-right: 20px; /* Space between animation and text */
+  padding-right: 20px; /* Add space between Lottie animation and text */
 }
 
 /* Text Content Container */
 .slide > div:last-child {
   flex: 1;
-  text-align: justify;
-  padding-left: 10px;
+  text-align: justify; /* Justify the text alignment */
+  padding-left: 10px; /* Add some left padding for spacing */
 }
 
-/* Heading Styles */
+/* Heading Styles (h1, h2) */
 .slide h1 {
   font-size: 32px;
   font-weight: bold;
-  color: #e03a3c;
-  margin-bottom: 10px;
+  color: #e03a3c; /* Corrected color code */
+  margin-bottom: 10px; /* Add space below the heading */
 }
 
 .slide h2 {
   font-size: 24px;
   font-weight: 600;
-  color: #555;
-  margin-bottom: 15px;
+  color: #555; /* More readable color */
+  margin-bottom: 15px; /* Add space below the subheading */
 }
 
 /* Paragraph Styles */
 .slide p {
   font-size: 18px;
-  color: #555;
-  line-height: 1.8;
-  margin-bottom: 20px;
+  color: #555; /* Standard text color */
+  line-height: 1.8; /* Improve readability */
+  margin-bottom: 20px; /* Add space below the paragraph */
 }
 
 /* Button Styles */
@@ -557,137 +545,118 @@ nav {
 }
 
 .btn-get-started:hover {
-  background-color: #c03032;
+  background-color: #c03032; /* Darken the red on hover */
 }
 
-/* Add a horizontal line below the slider */
-.slider-wrapper::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: #e03a3c;
-  margin-top: 10px;
-}
+/* Mobile Responsive Styles */
 
-/* Responsive Design */
-
-/* Tablets & Large Phones (480px to 768px) */
+/* Large Mobile (Tablets & Large Phones, 480px to 768px) */
 @media (max-width: 768px) {
-  .slider-wrapper {
-    height: 300px; /* Reduce height for mobile */
-  }
-
   .slider-container {
-    width: 100%; /* Ensure full width */
-    display: flex;
+    width: 100%; /* Make slider container width 100% on smaller screens */
+    display: block; /* Stack slides vertically */
   }
 
   .slide {
-    flex-direction: column;
-    text-align: center;
-    padding: 15px;
+    width: 120%; /* Each slide takes full width on small screens */
+    padding: 20px; /* Maintain padding */
+    display: block; /* Stack content vertically */
+    justify-content: center; /* Center the content */
+    align-items: flex-start; /* Align text and animation to the top */
   }
 
   .slide > div {
-    width: 100%;
+    flex: 1;
     padding: 0;
+    width: 100%; /* Make content take full width */
   }
 
   .slide > div:first-child {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Add some space below the Lottie animation */
   }
 
   .slide h1 {
-    font-size: 26px;
+    font-size: 26px; /* Reduce heading size for large mobile */
   }
 
   .slide h2 {
-    font-size: 20px;
+    font-size: 20px; /* Reduce subheading size */
   }
 
   .slide p {
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 16px; /* Reduce paragraph font size */
+    line-height: 1.6; /* Adjust line-height for better readability */
   }
 
   .btn-get-started {
-    font-size: 14px;
-    padding: 8px 16px;
-  }
-
-  .prev-btn, .next-btn {
-    top: 40%;
-    padding: 8px 12px;
+    font-size: 14px; /* Reduce button font size */
+    padding: 8px 16px; /* Adjust button padding */
   }
 }
 
-/* Medium Phones (360px to 480px) */
+/* Medium Mobile (Phones, 360px to 480px) */
 @media (max-width: 480px) {
-  .slider-wrapper {
-    height: 250px;
+  .slider-container {
+    width: 120%; /* Ensure the slides stack vertically */
+    display: block;
   }
 
   .slide {
-    width: 100%;
-    padding: 15px;
+    width: 100%; /* Each slide takes full width */
+    padding: 15px; /* Reduce padding for smaller screens */
+    display: block; /* Stack content vertically */
+    justify-content: center; /* Center the content */
   }
 
   .slide h1 {
-    font-size: 22px;
+    font-size: 22px; /* Further reduce heading size for medium mobile */
   }
 
   .slide h2 {
-    font-size: 18px;
+    font-size: 18px; /* Reduce subheading size */
   }
 
   .slide p {
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 14px; /* Further reduce paragraph font size */
+    line-height: 1.5; /* Adjust line-height for better readability */
   }
 
   .btn-get-started {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-
-  .prev-btn, .next-btn {
-    top: 35%;
-    padding: 6px 10px;
+    font-size: 12px; /* Reduce button font size */
+    padding: 6px 12px; /* Adjust button padding */
   }
 }
 
-/* Extra Small Phones (Below 360px) */
+/* Small Mobile (Extra Small Phones, Below 360px) */
 @media (max-width: 360px) {
-  .slider-wrapper {
-    height: 220px;
+  .slider-container {
+    width: 120%; /* Ensure the slides stack vertically */
+    display: block;
   }
 
   .slide {
-    padding: 12px;
+    width: 100%; /* Each slide takes full width */
+    padding: 12px; /* Reduce padding for very small screens */
+    display: block; /* Stack content vertically */
+    justify-content: center; /* Center the content */
   }
 
   .slide h1 {
-    font-size: 20px;
+    font-size: 20px; /* Further reduce heading size */
   }
 
   .slide h2 {
-    font-size: 16px;
+    font-size: 16px; /* Further reduce subheading size */
   }
 
   .slide p {
-    font-size: 12px;
-    line-height: 1.4;
+    font-size: 12px; /* Further reduce paragraph font size */
+    line-height: 1.4; /* Adjust line-height for better readability */
   }
 
   .btn-get-started {
-    font-size: 10px;
-    padding: 4px 8px;
-  }
-
-  .prev-btn, .next-btn {
-    top: 30%;
-    padding: 5px 8px;
+    font-size: 10px; /* Further reduce button font size */
+    padding: 4px 8px; /* Adjust button padding */
   }
 }
 
