@@ -456,18 +456,18 @@ nav {
 
 /*---------------------------------Main Design -----------------------------*/
 .products {
-  padding: 40px 20px; /* Add extra padding for spacing */
+  padding: 40px 20px;
   font-family: Arial, sans-serif;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
 }
 
 .products h1 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 30px; /* Increased margin for better visibility */
+  margin-bottom: 30px;
   color: red;
   margin-top: 3%;
-  word-wrap: break-word; /* Prevent overflow of long text */
+  word-wrap: break-word;
 }
 
 .products h2 {
@@ -481,11 +481,12 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0;
+  margin: 0 auto;
   width: 100%;
-  height: 65vh; /* Reduced height to ensure more space for the heading */
+  height: 65vh;
   box-sizing: border-box;
-  overflow: hidden; /* Prevent horizontal overflow */
+  overflow: hidden;
+  padding: 0 5%;
 }
 
 .product-section .text {
@@ -493,14 +494,17 @@ nav {
   padding: 10px;
   color: black;
   box-sizing: border-box;
+  position: relative;
 }
 
 .product-section .text.left {
-  margin-left: 15%; /* Reduced left margin for left text */
+  margin-left: -20%;
+  text-align: left;
 }
 
 .product-section .text.right {
-  margin-right: 15%; /* Reduced right margin for right text */
+  margin-right: -20%;
+  text-align: left;
 }
 
 .product-section .image {
@@ -510,45 +514,17 @@ nav {
   box-sizing: border-box;
 }
 
-.product-section img {
+.product-section img,
+.product-section object {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  object-fit: contain; /* Ensure the image fits within its container */
+  object-fit: contain;
 }
 
-.text h3 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  color: red;
-}
+/* 🛠 MOBILE RESPONSIVE FIXES WITH -20% MARGIN */
 
-.text p {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  color: black;
-  margin-bottom: 3%;
-}
-
-.text ul {
-  list-style: disc;
-  padding-left: 20px;
-  color: black;
-}
-
-.text ul li {
-  margin-bottom: 5px;
-}
-
-.product-section .left {
-  order: 1;
-}
-
-.product-section .right {
-  order: 2;
-}
-
-/* Tablet screens (768px and above) */
+/* Tablet (max-width: 1024px) */
 @media screen and (max-width: 1024px) {
   .products h1 {
     font-size: 1.8rem;
@@ -562,138 +538,79 @@ nav {
   .product-section {
     height: auto;
     flex-direction: column;
+    padding: 0 3%;
   }
 
   .product-section .text,
   .product-section .image {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
   }
 
-  .product-section .image {
-    text-align: center;
-  }
-}
-
-/* Mobile S (320px and below) */
-@media screen and (max-width: 320px) {
-  .products h1 {
-    font-size: 1.4rem; /* Smaller heading size */
-    margin-top: 20%; /* Adjust top margin for Mobile S */
+  .product-section .text.left {
+    margin-left: -20%;
+    text-align: left;
   }
 
-  .products h2 {
-    font-size: 1rem; /* Smaller subheading size */
-  }
-
-  .product-section {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .product-section .text,
-  .product-section .image {
-    width: 100%;
-    padding: 6px;
-  }
-
-  .product-section img {
-    width: 100%; /* Ensure image is responsive on small screens */
-    height: auto;
-  }
-
-  .text h3 {
-    font-size: 1.3rem; /* Smaller heading for Mobile S */
-  }
-
-  .text p {
-    font-size: 0.8rem; /* Smaller paragraph size */
-  }
-
-  .text ul li {
-    font-size: 0.8rem; /* Smaller list items */
+  .product-section .text.right {
+    margin-right: -20%;
+    text-align: left;
   }
 }
 
-/* Mobile M (375px and below) */
-@media screen and (max-width: 375px) {
-  .products h1 {
-    font-size: 1.5rem;
-    margin-top: 15%; /* Adjust top margin for Mobile M */
-  }
-
-  .products h2 {
-    font-size: 1.1rem;
-  }
-
-  .product-section {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .product-section .text,
-  .product-section .image {
-    width: 100%;
-    padding: 6px;
-  }
-
-  .product-section img {
-    width: 100%; /* Ensure image is responsive on Mobile M */
-    height: auto;
-  }
-
-  .text h3 {
-    font-size: 1.4rem; /* Adjusted heading size for Mobile M */
-  }
-
-  .text p {
-    font-size: 0.9rem; /* Adjusted paragraph size */
-  }
-
-  .text ul li {
-    font-size: 0.9rem; /* Adjusted list item size */
-  }
-}
-
-/* Mobile L (425px and below) */
+/* Mobile Screens (max-width: 425px) */
 @media screen and (max-width: 425px) {
   .products h1 {
-    font-size: 1.7rem;
-    margin-top: 20%; /* Adjust top margin for Mobile L */
+    font-size: 1.5rem;
+    margin-top: 10%;
   }
 
   .products h2 {
+    font-size: 1rem;
+  }
+
+  .product-section {
+    flex-direction: column;
+    height: auto;
+    padding: 0 5%;
+  }
+
+  .product-section .text,
+  .product-section .image {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .product-section .text.left {
+    margin-left: -20%;
+    text-align: left;
+  }
+
+  .product-section .text.right {
+    margin-right: -20%;
+    text-align: left;
+  }
+
+  .product-section img,
+  .product-section object {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .text h3 {
     font-size: 1.2rem;
   }
 
-  .product-section {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .product-section .text,
-  .product-section .image {
-    width: 100%;
-    padding: 8px;
-  }
-
-  .product-section img {
-    width: 100%; /* Ensure image is responsive on Mobile L */
-    height: auto;
-  }
-
-  .text h3 {
-    font-size: 1.6rem; /* Adjusted heading size for Mobile L */
-  }
-
   .text p {
-    font-size: 1rem; /* Adjusted paragraph size */
+    font-size: 0.8rem;
   }
 
   .text ul li {
-    font-size: 1rem; /* Adjusted list item size */
+    font-size: 0.8rem;
   }
 }
+
+
 
 
 
