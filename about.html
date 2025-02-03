@@ -123,7 +123,7 @@
         <div class="row">
           <!-- Slider Container -->
           <div class="col-xl-12" style="overflow: hidden; position: relative; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); border-radius: 10px; margin-bottom: 20px;">
-            <div id="sliderContainer" class="slider-container" style="display: flex; transition: transform 1s ease; width: 300%;">
+            <div id="sliderContainer" class="slider-container" style="display: flex; transition: transform 0.5s ease; width: 300%; touch-action: pan-y;">
 
               <!-- Slide 1 -->
               <div class="slide" style="width: 32.33%; display: flex; align-items: center; justify-content: space-between;">
@@ -177,21 +177,59 @@
     <hr style="border: 1px solid #e03a3c; margin: 20px 0;">
   </div>
 
-  <!-- JavaScript for Slide Transition -->
+  <!-- JavaScript for Slide Transition and Swipe Gesture -->
   <script>
     let currentIndex = 0;
     const totalSlides = 3;
     const sliderContainer = document.getElementById("sliderContainer");
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let autoSlide;
 
-    function slideChange() {
-      currentIndex = (currentIndex + 1) % totalSlides;  // Increment index and loop back to 0 after the last slide
-      sliderContainer.style.transform = `translateX(-${currentIndex * 33.33}%)`; // Move the slider horizontally to show the next slide
+    function slideChange(next = true) {
+      if (next) {
+        currentIndex = (currentIndex + 1) % totalSlides;
+      } else {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      }
+      sliderContainer.style.transform = `translateX(-${currentIndex * 33.33}%)`;
     }
 
-    // Set an interval to change slides every 3 seconds (3000ms)
-    setInterval(slideChange, 4000);
+    function autoSlideStart() {
+      autoSlide = setInterval(() => slideChange(true), 4000);
+    }
+
+    function autoSlideStop() {
+      clearInterval(autoSlide);
+    }
+
+    // Swipe Detection
+    sliderContainer.addEventListener("touchstart", (e) => {
+      touchStartX = e.touches[0].clientX;
+      autoSlideStop(); // Stop auto-slide when user interacts
+    });
+
+    sliderContainer.addEventListener("touchmove", (e) => {
+      touchEndX = e.touches[0].clientX;
+    });
+
+    sliderContainer.addEventListener("touchend", () => {
+      let swipeDistance = touchStartX - touchEndX;
+
+      if (swipeDistance > 50) {
+        slideChange(true); // Swipe left to next slide
+      } else if (swipeDistance < -50) {
+        slideChange(false); // Swipe right to previous slide
+      }
+
+      autoSlideStart(); // Restart auto-slide after user interaction
+    });
+
+    // Start auto-slide
+    autoSlideStart();
   </script>
 </section>
+
 
 
 
