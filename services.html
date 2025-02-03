@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Fourise Software Solutions Pvt. Ltd.</title>
   <meta content="" name="description">
@@ -13,6 +14,7 @@
   <link href="assets/img/testimonials/favicon1.jpg" rel="icon">
   <link href="assets/img/testimonials/favicon1.jpg" rel="apple-touch-icon">
 
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <!-- Google Fonts -->
@@ -31,8 +33,7 @@
   <link href="assets/css/service.css" rel="stylesheet">
 
   <!-- Lottie Animation Library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/bodymovin.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/bodymovin.min.js"></script>
 
   <!-- =======================================================
   * Template Name: Presento - v1.1.1
@@ -41,6 +42,7 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+
 
 <body>
 
@@ -110,31 +112,30 @@
 
 <!-- ======= Services Section ======= -->
 <section class="services-section">
-  <h1>Our Services</h1>
+  <h1 class="heading">Our Services</h1>
   <p>We offer a wide range of services to cater to your business and personal needs.</p>
   <div class="services-container">
     <!-- Web Development Card -->
-<a href="web.html" class="card-link" style="margin-left: 5%;">
-  <div class="card">
-    <div class="card-inner">
-      <div class="card-front">
-        <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.3.0/dist/dotlottie-wc.js" type="module"></script>
-        <dotlottie-wc 
-          src="https://lottie.host/21cc4c31-010b-4897-8623-ff3d80f3c1ed/BHMusOn0EX.lottie" 
-          autoplay 
-          loop>
-        </dotlottie-wc>
-        <h2>Web Development</h2>
-        <p>Create responsive and modern websites for your business.</p>
+    <a href="web.html" class="card-link" style="margin-left: 5%;">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.3.0/dist/dotlottie-wc.js" type="module"></script>
+            <dotlottie-wc 
+              src="https://lottie.host/21cc4c31-010b-4897-8623-ff3d80f3c1ed/BHMusOn0EX.lottie" 
+              autoplay 
+              loop>
+            </dotlottie-wc>
+            <h2>Web Development</h2>
+            <p>Create responsive and modern websites for your business.</p>
+          </div>
+          <div class="card-back">
+            We build responsive, modern, and user-friendly websites tailored to your needs.
+          </div>
+        </div>
       </div>
-      <div class="card-back">
-        We build responsive, modern, and user-friendly websites tailored to your needs.
-      </div>
-    </div>
-  </div>
-</a>
+    </a>
 
-    <!-- Mobile Applications Card -->
     <!-- Mobile Applications Card -->
     <a href="mobile.html" class="card-link">
       <div class="card">
@@ -249,6 +250,20 @@
   </div>
 </section>
 
+<script>
+  window.addEventListener('load', function() {
+    const header = document.getElementById('header'); // Select the header by ID
+    const servicesSection = document.querySelector('section.services-section'); // Select the services section
+
+    // Get the computed height of the navbar
+    const headerHeight = window.getComputedStyle(header).height;
+
+    // Set the margin-top of the services section based on the navbar height
+    servicesSection.style.marginTop = headerHeight;
+  });
+</script>
+
+
 
 
 
@@ -275,7 +290,7 @@
         </div>
     </div>
 </section>
-<!-- End Key Features Section -->
+<!-- End Key Features Section --> 
 
 
 

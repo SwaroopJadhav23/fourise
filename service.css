@@ -418,9 +418,10 @@ nav {
 /* Services Section */
 .services-section {
     text-align: center;
-    padding: 30px 20px;
-    margin-top: 4%;
+    padding: 60px 20px; /* Increased padding */
+    margin-top: 10%; /* Ensure visibility */
     background-color: #1b1b1b;
+    overflow: visible; /* Prevents clipping */
 }
 
 .services-section h1 {
@@ -428,7 +429,9 @@ nav {
     color: #e03a3c;
     margin-bottom: 20px;
     font-weight: bold;
-    margin-top: 5%; /* Applied globally */
+    visibility: visible; /* Ensure it's visible */
+    display: block; /* Ensure it takes space */
+    margin-top: 10%; /* Margin to give space on top */
 }
 
 .services-section p {
@@ -440,206 +443,151 @@ nav {
 /* Services Container */
 .services-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    grid-template-columns: repeat(3, 1fr);
     gap: 60px;
     max-width: 1350px;
     margin: 0 auto;
-    margin-left: 220px;
     background-color: #1b1b1b;
+    overflow: visible; /* Prevent hiding content */
 }
 
-/* Card Styling */
-.card {
-    width: 220px;
-    perspective: 1000px;
-    border: none;
+/* Responsive for Tablets (768px and below) */
+@media (max-width: 768px) {
+    .services-section {
+        padding: 70px 20px;
+        margin-top: 12%;
+    }
+
+    .services-section h1 {
+        font-size: 2.2em;
+        margin-top: 12%;
+    }
+
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+/* General Services Section Styles */
+.services-section {
+    text-align: center;
+    padding: 60px 20px;
     background-color: #1b1b1b;
+    overflow: visible;
+}
+
+.services-section h1 {
+    font-size: 2.5em;
+    color: #e03a3c;
+    margin-bottom: 20px;
+    font-weight: bold;
+    visibility: visible;
+}
+
+.services-section p {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+/* Services Container */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    max-width: 1350px;
+    margin: 0 auto;
+    background-color: #1b1b1b;
+    overflow: visible;
+}
+
+/* Cards within the services section */
+.card-link {
+    text-decoration: none;
+}
+
+.card {
+    background-color: #2b2b2b;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
 }
 
 .card-inner {
     position: relative;
-    width: 100%;
-    height: 300px;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
-    border: none;
-    background-color: #1b1b1b;
 }
 
-.card:hover .card-inner {
-    transform: rotateY(180deg);
-}
-
-/* Card Front and Back */
 .card-front, .card-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border: 2px solid #e03a3c;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #1b1b1b;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
 }
 
 .card-front h2 {
-    color: #e03a3c;
     font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 10px;
+    color: #fff;
 }
 
 .card-front p {
     color: #fff;
-    font-size: 1em;
-    text-align: center;
-    margin-top: 5px;
 }
 
-.card-back {
-    color: #fff;
-    background-color: #1b1b1b;
-    font-size: 1em;
-    padding: 10px;
-    transform: rotateY(180deg);
-    text-align: center;
-}
+/* Mobile and Tablet Sizes */
 
-/* Medium Devices (1024px and below) */
-@media (max-width: 1024px) {
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .services-section {
+        padding: 70px 20px;
+    }
+
     .services-section h1 {
         font-size: 2.2em;
     }
 
-    .services-section p {
-        font-size: 17px;
-    }
-
     .services-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        grid-template-columns: repeat(2, 1fr);
         gap: 40px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .card {
-        width: 200px;
-    }
-
-    .card-front h2 {
-        font-size: 1.3em;
-    }
-
-    .card-front p {
-        font-size: 0.9em;
     }
 }
 
-/* Small Tablets (768px and below) */
-@media (max-width: 768px) {
+/* Mobile (425px and below) */
+@media (max-width: 425px) {
+    .services-section {
+        padding: 90px 20px;
+    }
+
     .services-section h1 {
         font-size: 2em;
-        margin-top: 5%;
-    }
-
-    .services-section p {
-        font-size: 16px;
-    }
-
-    .services-container {
-        grid-template-columns: repeat(1, 1fr); /* 1 card per row */
-        gap: 30px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .card {
-        width: 90%; /* Make cards responsive */
-        height: auto;
-    }
-
-    .card-front h2 {
-        font-size: 1.2em;
-    }
-
-    .card-front p {
-        font-size: 1em;
-    }
-}
-
-/* Mobile L (420px and below) */
-@media (max-width: 420px) {
-    .services-section h1 {
-        font-size: 1.8em;
-        margin-top: 10%;
-    }
-
-    .services-section p {
-        font-size: 15px;
-    }
-
-    .services-container {
-        gap: 25px;
-    }
-
-    .card {
-        width: 100%; /* Full width for smaller screens */
-        height: auto;
-    }
-
-    .card-front h2 {
-        font-size: 1.1em;
-    }
-
-    .card-front p {
-        font-size: 0.9em;
-    }
-}
-
-/* Mobile M (375px and below) */
-@media (max-width: 375px) {
-    .services-section h1 {
-        font-size: 1.6em;
-        margin-top: 10%;
-    }
-
-    .services-section p {
-        font-size: 14px;
+        visibility: visible;
     }
 
     .services-container {
         gap: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .card {
-        width: 100%;
+        width: 90%;
+        max-width: 320px;
         height: auto;
-    }
-
-    .card-front h2 {
-        font-size: 1em;
-    }
-
-    .card-front p {
-        font-size: 0.85em;
     }
 }
 
-/* Mobile S (320px and below) */
+/* Very Small Screens (320px and below) */
 @media (max-width: 320px) {
-    .services-section h1 {
-        font-size: 1.5em;
-        margin-top: 5%;
+    .services-section {
+        padding: 100px 20px;
     }
 
-    .services-section p {
-        font-size: 13px;
+    .services-section h1 {
+        font-size: 1.8em;
     }
 
     .services-container {
@@ -647,18 +595,15 @@ nav {
     }
 
     .card {
-        width: 100%;
+        width: 95%;
+        max-width: 300px;
         height: auto;
     }
-
-    .card-front h2 {
-        font-size: 0.9em;
-    }
-
-    .card-front p {
-        font-size: 0.8em;
-    }
 }
+
+
+
+
 
 
 
