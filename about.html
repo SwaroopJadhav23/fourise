@@ -124,52 +124,51 @@
           <!-- Slider Container -->
           <div class="col-xl-12" style="overflow: hidden; position: relative; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); border-radius: 10px; margin-bottom: 20px;">
             <div id="sliderContainer" class="slider-container" style="display: flex; transition: transform 1s ease; width: 300%;">
-              
+
               <!-- Slide 1 -->
-              <div class="slide" style="width: 33.33%; display: flex; align-items: center; justify-content: space-between;">
+              <div class="slide" style="width: 32.33%; display: flex; align-items: center; justify-content: space-between;">
+                <!-- Lottie Animation -->
                 <div style="flex: 1;">
                   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.3.0/dist/dotlottie-wc.js" type="module"></script>
-                  <dotlottie-wc src="https://lottie.host/4e91e3cc-3bf3-4a81-bcfe-faace7c88d8c/IhBY7pLZJ2.lottie" autoplay loop style="width: 100%; height: auto;"></dotlottie-wc>
+                  <dotlottie-wc src="https://lottie.host/4e91e3cc-3bf3-4a81-bcfe-faace7c88d8c/IhBY7pLZJ2.lottie" autoplay loop style="width: 100%; height: auto; margin-left: -10%;"></dotlottie-wc>
                 </div>
+                <!-- Heading and Text -->
                 <div style="flex: 1; text-align: justify; padding-left: 10px;">
-                  <h1 style="color: #e03a3c; font-weight: bold;">Create Mobile Apps With Us</h1>
-                  <p>Every business wants to become easier for clients, and mobile applications<br> help achieve this.</p>
-                  <a href="contact.html" class="btn-get-started scrollto">Contact us</a>
+                  <h1 style="color: #e03a3c; font-weight: bold; text-align: justify;">Create Mobile Apps With us</h1>
+                  <p>Every business wants to become easier for clients so mobile applications perform such wonderful tasks.</p>
+                  <a href="contact.php" class="btn-get-started scrollto">Contact us</a>
                 </div>
               </div>
 
               <!-- Slide 2 -->
-              <div class="slide" style="width: 33.33%; display: flex; align-items: center; justify-content: space-between;">
+              <div class="slide" style="width: 32.33%; display: flex; align-items: center; justify-content: space-between;">
+                <!-- Lottie Animation -->
                 <div style="flex: 1;">
                   <dotlottie-wc src="https://lottie.host/1c50b72e-37e9-4b2b-92c6-bf177edf697f/U4aMOcEXhv.lottie" autoplay loop style="width: 100%; height: auto;"></dotlottie-wc>
                 </div>
+                <!-- Heading and Text -->
                 <div style="flex: 1; text-align: justify; padding-left: 20px;">
-                  <h1 style="color: #e03a3c; font-weight: bold;">Create Websites With Us</h1>
-                  <p>We provide all business websites at a minimum cost, along with<br> web applications and portals to grow your business online.</p>
-                  <a href="web.html" class="btn-get-started scrollto">Get in touch</a>
+                  <h1 style="color: #e03a3c; font-weight: bold; text-align: justify;">Create Websites With us</h1>
+                  <p>We provide all business Websites with minimum cost. Also Web applications for spreading your business over the Internet.</p>
+                  <a href="web.php" class="btn-get-started scrollto">Get in touch</a>
                 </div>
               </div>
 
               <!-- Slide 3 -->
-              <div class="slide" style="width: 33.33%; display: flex; align-items: center; justify-content: space-between;">
+              <div class="slide" style="width: 32.33%; display: flex; align-items: center; justify-content: space-between;">
+                <!-- Lottie Animation -->
                 <div style="flex: 1;">
                   <dotlottie-wc src="https://lottie.host/0a4f7e33-a355-4817-96ae-f448fb7dfcd0/MADGerX19k.lottie" autoplay loop style="width: 100%; height: auto;"></dotlottie-wc>
                 </div>
+                <!-- Heading and Text -->
                 <div style="flex: 1; text-align: justify; padding-left: 20px;">
-                  <h1 style="color: #e03a3c; font-weight: bold;">Develop RPA Projects With Us</h1>
-                  <p>Robotic Process Automation helps automate daily human tasks,<br> making processes faster and more efficient without human intervention.</p>
-                  <a href="rpa-internship.html" class="btn-get-started scrollto">Contact us</a>
+                  <h1 style="color: #e03a3c; font-weight: bold; text-align: justify;">Develop RPA Projects With Us</h1>
+                  <p>Robotic Process Automation Solicite Daily human tasks into the machine process.</p>
+                  <a href="rpa-internship.php" class="btn-get-started scrollto">Contact us</a>
                 </div>
               </div>
 
             </div>
-
-            <!-- Previous & Next Buttons -->
-            <!-- Previous & Next Buttons (hidden on mobile) -->
-<button id="prevBtn" class="slider-btn" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%);">❮</button>
-<button id="nextBtn" class="slider-btn" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%);">❯</button>
-
-
           </div>
         </div>
       </div>
@@ -178,85 +177,23 @@
     <hr style="border: 1px solid #e03a3c; margin: 20px 0;">
   </div>
 
-  <!-- JavaScript for Slider -->
+  <!-- JavaScript for Slide Transition -->
   <script>
     let currentIndex = 0;
-const totalSlides = 3;
-const sliderContainer = document.getElementById("sliderContainer");
-let slideInterval;
-let startTouchX = 0;
-let endTouchX = 0;
+    const totalSlides = 3;
+    const sliderContainer = document.getElementById("sliderContainer");
 
-// Update Slide
-function updateSlide() {
-    sliderContainer.style.transform = `translateX(-${currentIndex * 33.33}%)`;
-}
-
-// Start Slideshow
-function startSlideShow() {
-    slideInterval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateSlide();
-    }, 4000);
-}
-
-// Stop Slideshow
-function stopSlideShow() {
-    clearInterval(slideInterval);
-}
-
-// Reset Auto Slide after manual change
-function resetAutoSlide() {
-    stopSlideShow();
-    setTimeout(startSlideShow, 5000); // Resume auto-slide after 5 seconds
-}
-
-// Next Button Event
-document.getElementById("nextBtn").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    updateSlide();
-    resetAutoSlide();
-});
-
-// Previous Button Event
-document.getElementById("prevBtn").addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    updateSlide();
-    resetAutoSlide();
-});
-
-// Pause Slideshow on Mouse Hover
-sliderContainer.addEventListener("mouseenter", stopSlideShow);
-sliderContainer.addEventListener("mouseleave", startSlideShow);
-
-// Start Slideshow on page load
-startSlideShow();
-
-// Swipe Gesture Support for Mobile
-sliderContainer.addEventListener("touchstart", (event) => {
-    startTouchX = event.touches[0].clientX;
-}, { passive: true });
-
-sliderContainer.addEventListener("touchmove", (event) => {
-    endTouchX = event.touches[0].clientX;
-}, { passive: true });
-
-sliderContainer.addEventListener("touchend", () => {
-    if (startTouchX - endTouchX > 50) {
-        // Swipe Left (Next Slide)
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateSlide();
-        resetAutoSlide();
-    } else if (endTouchX - startTouchX > 50) {
-        // Swipe Right (Previous Slide)
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateSlide();
-        resetAutoSlide();
+    function slideChange() {
+      currentIndex = (currentIndex + 1) % totalSlides;  // Increment index and loop back to 0 after the last slide
+      sliderContainer.style.transform = `translateX(-${currentIndex * 33.33}%)`; // Move the slider horizontally to show the next slide
     }
-});
 
+    // Set an interval to change slides every 3 seconds (3000ms)
+    setInterval(slideChange, 4000);
   </script>
 </section>
+
+
 
 
 <!-- End Hero Section -->

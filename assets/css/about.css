@@ -454,10 +454,6 @@ nav {
 /*--------------------------------------------------------------
 /* Hero Section */
 
-/* ===================== */
-/* Default Styles */
-/* ===================== */
-
 .slider-wrapper {
   overflow: hidden;
   position: relative;
@@ -491,103 +487,117 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   background-color: white;
   position: relative;
+  padding-top: 180px; /* Adding space for Lottie animation */
 }
 
 .slide > div {
   width: 100%;
-  text-align: center;
-}
-
-.slide h1 {
-  font-size: 32px;
-  font-weight: bold;
-  color: #e03a3c;
-  margin-bottom: 10px;
-}
-
-.slide h2 {
-  font-size: 24px;
-  font-weight: 600;
-  color: #555;
-  margin-bottom: 15px;
-}
-
-.slide p {
-  font-size: 18px;
-  color: #555;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-.btn-get-started {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  background-color: #e03a3c;
-  border: none;
-  border-radius: 4px;
-  text-decoration: none;
-  text-align: center;
-  transition: background-color 0.3s ease;
-}
-
-.btn-get-started:hover {
-  background-color: #c03032;
+  text-align: left;
 }
 
 /* ===================== */
-/* Lottie Animation (Top-Left Perfect Positioning) */
+/* Lottie Animation (Fixed Top-Left Position) */
 /* ===================== */
 
-.lottie-animation {
-  margin-top: -30px;
-  left: -90px;
+.lottie-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
   width: 150px;
   height: 150px;
+  margin-left: -100px; /* Move it further left */
+  margin-top: -100px; /* Move it further up */
+}
+
+.lottie-animation {
+  width: 100%;
+  height: 100%;
 }
 
 /* Small Mobile (320px) */
 @media (max-width: 320px) {
-  .lottie-animation {
-    margin-top: -30px;
-  left: -90px;
-    width: 100px;
-    height: 100px;
+  .lottie-container {
+    top: 5px;
+    left: 5px;
+    width: 80px;
+    height: 80px;
+    margin-left: -80px; /* Adjust left margin */
+    margin-top: -80px; /* Adjust top margin */
+  }
+  .slide {
+    padding-top: 120px; /* Adjust space for smaller screens */
+  }
+  .slide h1 {
+    font-size: 12px; /* Reduce font size for small mobile */
+  }
+  .slide p {
+    font-size: 10px; /* Reduce font size for small mobile */
   }
 }
 
 /* Medium Mobile (375px) */
 @media (max-width: 375px) {
-  .lottie-animation {
-    margin-top: -30px;
-  left: -90px;
-    width: 120px;
-    height: 120px;
+  .lottie-container {
+    top: 8px;
+    left: 8px;
+    width: 100px;
+    height: 100px;
+    margin-left: -90px; /* Adjust left margin */
+    margin-top: -90px; /* Adjust top margin */
+  }
+  .slide {
+    padding-top: 140px; /* Adjust space for medium mobile */
+  }
+  .slide h1 {
+    font-size: 14px; /* Reduce font size for medium mobile */
+  }
+  .slide p {
+    font-size: 12px; /* Reduce font size for medium mobile */
   }
 }
 
-/* Large Mobile (425px) */
-@media (max-width: 425px) {
-  .lottie-animation {
-   margin-top: -30px;
-  left: -90px;
-    width: 140px;
-    height: 140px;
+/* Large Mobile (420px) */
+@media (max-width: 420px) {
+  .lottie-container {
+    top: 10px;
+    left: 10px;
+    width: 120px;
+    height: 120px;
+    margin-left: -100px; /* Adjust left margin */
+    margin-top: -100px; /* Adjust top margin */
+  }
+  .slide {
+    padding-top: 160px; /* Adjust space for larger mobile */
+  }
+  .slide h1 {
+    font-size: 15px; /* Reduce font size for larger mobile */
+  }
+  .slide p {
+    font-size: 13px; /* Reduce font size for larger mobile */
   }
 }
 
 /* Tablet (768px) */
 @media (max-width: 768px) {
-  .lottie-animation {
-    margin-top: -30px;
-  left: -90px;
-    width: 160px;
-    height: 160px;
+  .lottie-container {
+    top: 15px;
+    left: 15px;
+    width: 150px;
+    height: 150px;
+    margin-left: -100px; /* Adjust left margin */
+    margin-top: -100px; /* Adjust top margin */
+  }
+  .slide {
+    padding-top: 180px; /* Adjust space for tablet */
+  }
+  .slide h1 {
+    font-size: 20px; /* Slightly reduce font size */
+  }
+  .slide p {
+    font-size: 18px; /* Slightly reduce font size */
   }
 }
 
@@ -636,8 +646,8 @@ nav {
   }
 }
 
-/* Large Mobile (425px) */
-@media (max-width: 425px) {
+/* Large Mobile (420px) */
+@media (max-width: 420px) {
   .button-container {
     bottom: 10px;
   }
@@ -657,6 +667,7 @@ nav {
     font-size: 18px;
   }
 }
+
 
   
 
