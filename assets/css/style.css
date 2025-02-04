@@ -612,6 +612,12 @@ nav {
     color: #000; /* Set text color to black */
   }
 
+  /* Ensure buttons are aligned beside one another */
+  .btn-get-started-container {
+    display: flex; /* Align buttons side by side */
+    gap: 10px; /* Space between the buttons */
+  }
+
   #hero .btn-get-started {
     font-size: 12px;
     padding: 6px 15px;
@@ -638,13 +644,14 @@ nav {
     padding: 20px; /* Reduced padding */
     height: auto;
     text-align: left; /* Align text to the left */
-    margin-top: 0; /* Reset margin-top */
+    margin-top: 0%; /* Reset margin-top */
   }
 
   #hero h1 {
     font-size: 24px; /* Adjusted font size for Mobile S */
-    margin-top: 0; /* Set margin-top to 0 initially */
+    margin-top: 5%; /* Set margin-top to 0 initially */
     color: #000; /* Set text color to black */
+
   }
 
   .hero-subtitle-1 {
@@ -653,6 +660,12 @@ nav {
     margin-bottom: 10px;
     font-weight: 400;
     color: #000; /* Set text color to black */
+  }
+
+  /* Align buttons horizontally inside their parent container */
+  .btn-get-started-container {
+    display: flex; /* Align buttons side by side */
+    gap: 10px; /* Space between the buttons */
   }
 
   #hero .btn-get-started {
@@ -690,6 +703,7 @@ nav {
     font-size: 20px;
   }
 }
+
 
 
 

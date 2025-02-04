@@ -95,10 +95,11 @@
           <div class="col-xl-6 d-flex flex-column justify-content-center">
             <h1>Welcome to Fourise Software Solutions Pvt. Ltd.</h1>
             <h2 class="hero-subtitle">We solve the problem and provide optimal solutions for your business.</h2>
-            <div>
-              <a href="about.html" class="btn-get-started scrollto">Know More</a>
-              <a href="contact.html" class="btn-get-started scrollto">Contact Us</a>
-            </div>
+            <div class="btn-get-started-container">
+  <a href="about.html" class="btn-get-started scrollto">Know More</a>
+  <a href="contact.html" class="btn-get-started scrollto">Contact Us</a>
+</div>
+
           </div>
 
           <!-- Right Content -->
@@ -117,10 +118,10 @@
     // Get the height of the navbar (assuming it's the first element with class 'navbar')
     var navbarHeight = document.querySelector('.navbar') ? document.querySelector('.navbar').offsetHeight : 0;
 
-    // Adjust the margin-top of the #hero section
+    // Adjust the margin-top of the #hero section, adding extra margin (20px more)
     var heroSection = document.getElementById('hero');
     if (heroSection) {
-      heroSection.style.marginTop = navbarHeight + 'px'; // Set margin-top to navbar height
+      heroSection.style.marginTop = (navbarHeight + 30) + 'px'; // Add extra 20px margin
     }
   });
 
@@ -129,7 +130,7 @@
     var navbarHeight = document.querySelector('.navbar') ? document.querySelector('.navbar').offsetHeight : 0;
     var heroSection = document.getElementById('hero');
     if (heroSection) {
-      heroSection.style.marginTop = navbarHeight + 'px';
+      heroSection.style.marginTop = (navbarHeight + 30) + 'px'; // Add extra 20px margin
     }
   });
 </script>
