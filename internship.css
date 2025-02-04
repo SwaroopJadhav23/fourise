@@ -650,107 +650,94 @@ nav {
 
 /* For Mobile L (<= 991px) */
 @media (max-width: 991px) {
-    .internship-section h1 {
-        font-size: 28px;
-        margin-left: 5%;
-    }
-
-    .internship-section p {
-        font-size: 14px;
-        max-width: 700px;
-    }
-
-    .internship-container {
-        flex-direction: column;
-        gap: 20px; /* Adjusted gap */
-    }
-
     .internship-card {
-        max-width: 90%; /* Adjust width for mobile */
-        margin-bottom: 20px;
+        max-width: 90%;
+        margin-bottom: 15px;
+        padding: 15px; /* Reduced padding */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .internship-logo img {
-        width: 100px; /* Smaller logo for mobile */
+        width: 90px; /* Smaller logo */
+    }
+
+    .internship-details {
+        text-align: left;
+        flex-grow: 1;
     }
 
     .internship-details h3 {
         font-size: 18px;
+        margin-bottom: 5px;
     }
 
     .apply-btn {
         font-size: 12px;
-        padding: 6px 16px;
+        padding: 6px 14px;
+        margin-left: auto; /* Push button to the right */
     }
 }
 
 /* For Mobile M (<= 767px) */
 @media (max-width: 767px) {
-    .internship-section h1 {
-        font-size: 24px;
-        margin-left: 20%;
-    }
-
-    .internship-section p {
-        font-size: 14px;
-        max-width: 600px;
-    }
-
-    .internship-container {
-        gap: 15px;
-    }
-
     .internship-card {
         max-width: 95%;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
+        padding: 12px; /* Further reduced padding */
     }
 
     .internship-logo img {
-        width: 90px; /* Even smaller logo */
+        width: 80px;
     }
 
     .internship-details h3 {
         font-size: 16px;
     }
 
+    .internship-info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
     .apply-btn {
         font-size: 12px;
-        padding: 6px 14px;
+        padding: 5px 12px;
+        margin-left: auto; /* Keeps button aligned right */
     }
 }
 
 /* For Mobile S (<= 480px) */
 @media (max-width: 480px) {
-    .internship-section h1 {
-        font-size: 22px;
-        margin-left: 10%;
-    }
-
-    .internship-section p {
-        font-size: 12px;
-        max-width: 500px;
-    }
-
-    .internship-container {
-        gap: 10px;
-    }
-
     .internship-card {
         max-width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
+        padding: 10px; /* Minimal padding for a smaller card */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .internship-logo img {
-        width: 80px; /* Logo even smaller for small screens */
+        width: 70px; /* Even smaller logo */
     }
 
     .internship-details h3 {
         font-size: 14px;
+        margin-bottom: 3px;
+    }
+
+    .internship-details p {
+        font-size: 12px;
     }
 
     .apply-btn {
         font-size: 10px;
-        padding: 6px 12px;
+        padding: 5px 10px;
+        margin-left: auto;
     }
 }
 
