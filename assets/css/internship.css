@@ -840,6 +840,13 @@ body {
 
 /* Laptop and larger screens (≥1024px) */
 @media (min-width: 1024px) {
+  .internship-section {
+    display: flex;
+    flex-direction: column; /* Stack the h1 and p vertically */
+    align-items: center; /* Center the items horizontally */
+    text-align: center; /* Center the text */
+  }
+
   .internship-card {
     height: 220px; /* Reduced height from 250px to 220px */
     padding: 40px; /* Larger padding */
@@ -858,12 +865,22 @@ body {
   /* Increased font sizes for laptop and larger screens */
   .internship-section h1 {
     font-size: 38px; /* Larger font size for headings */
-    margin-left: 30%;
+    margin-left: 0; /* Reset left margin */
+    margin-bottom: 20px; /* Space between h1 and p */
   }
 
   .internship-section p {
     font-size: 18px; /* Larger font size for description */
-    margin-top: %;
+    margin-top: 0; /* Remove top margin */
+    margin-bottom: 40px; /* Space between p and internship cards */
+    max-width: 1000px; /* Keep the description width large */
+    margin-left: auto;
+    margin-right: auto; /* Center the paragraph */
+  }
+
+  .internship-logo img {
+    width: 100px; /* Increase the image width */
+    height: auto; /* Maintain aspect ratio */
   }
 
   .internship-details h3 {
@@ -872,16 +889,15 @@ body {
 
   .internship-info p {
     font-size: 16px; /* Larger font size for info */
+    margin-left: 0%;
   }
 
   .apply-btn {
     font-size: 16px; /* Larger font size for button */
   }
 }
-.internship-logo img {
-    width: 120px; /* Increase the image width */
-    height: auto; /* Maintain aspect ratio */
-  }
+
+
 
 
 
