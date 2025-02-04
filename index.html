@@ -112,6 +112,29 @@
   </div>
 </section>
 
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    // Get the height of the navbar (assuming it's the first element with class 'navbar')
+    var navbarHeight = document.querySelector('.navbar') ? document.querySelector('.navbar').offsetHeight : 0;
+
+    // Adjust the margin-top of the #hero section
+    var heroSection = document.getElementById('hero');
+    if (heroSection) {
+      heroSection.style.marginTop = navbarHeight + 'px'; // Set margin-top to navbar height
+    }
+  });
+
+  // Ensure the margin-top is adjusted if the window is resized
+  window.addEventListener('resize', function() {
+    var navbarHeight = document.querySelector('.navbar') ? document.querySelector('.navbar').offsetHeight : 0;
+    var heroSection = document.getElementById('hero');
+    if (heroSection) {
+      heroSection.style.marginTop = navbarHeight + 'px';
+    }
+  });
+</script>
+
+
 
   <main id="main">
 
