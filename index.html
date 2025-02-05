@@ -83,28 +83,29 @@
 
 <script>
     function adjustLogoFontSize() {
-        const logoText = document.getElementById("logoText");
-        if (!logoText) return;
+    const logoText = document.getElementById("logoText");
+    if (!logoText) return;
 
-        const screenWidth = window.innerWidth;
+    const screenWidth = window.innerWidth;
 
-        // Ensure logo is aligned to the left
-        logoText.style.textAlign = "left";
+    // Ensure logo is aligned to the left
+    logoText.style.textAlign = "left";
 
-        // Adjust font size based on screen width
-        if (screenWidth <= 320) {
-            logoText.style.fontSize = "12px";  // Extra Small Screens
-        } else if (screenWidth <= 375) {
-            logoText.style.fontSize = "14px"; // Small Mobile Screens
-        } else if (screenWidth <= 425) {
-            logoText.style.fontSize = "14px"; // Mobile L
-        } else {
-            logoText.style.fontSize = "24px"; // Default for larger screens
-        }
+    // Adjust font size based on screen width
+    if (screenWidth <= 320) {
+        logoText.style.fontSize = "12px";  // Extra Small Screens
+    } else if (screenWidth <= 375) {
+        logoText.style.fontSize = "14px"; // Small Mobile Screens
+    } else if (screenWidth <= 425) {
+        logoText.style.fontSize = "15px"; // Mobile L (Increased size for better visibility)
+    } else {
+        logoText.style.fontSize = "24px"; // Default for larger screens
     }
+}
 
-    window.addEventListener("load", adjustLogoFontSize);
-    window.addEventListener("resize", adjustLogoFontSize);
+window.addEventListener("load", adjustLogoFontSize);
+window.addEventListener("resize", adjustLogoFontSize);
+
 
 </script>
   
