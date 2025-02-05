@@ -6,29 +6,13 @@
 */
 
 /*--------------------------------------------------------------
-/* General styling */
+# General
+--------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
-
-  /* Enable scrolling but hide the scrollbar */
-  overflow-y: scroll; /* Ensure scrolling is functional */
-  height: 100vh; /* Ensure full height */
-  margin: 0; /* Avoid extra scrollbars caused by default margins */
 }
 
-/* For Webkit browsers (Chrome, Safari, Edge) */
-body::-webkit-scrollbar {
-  display: none; /* Hides the scrollbar */
-}
-
-/* For Firefox */
-body {
-  scrollbar-width: none; /* Hides the scrollbar */
-  -ms-overflow-style: none; /* Hides the scrollbar for IE 10+ */
-}
-
-/* Anchor styles */
 a {
   color: #e03a3c;
 }
@@ -38,11 +22,9 @@ a:hover {
   text-decoration: none;
 }
 
-/* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
-
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -83,7 +65,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------------------------------------------------
-/* Header Styles */
+/*--------------------------------------------------------------
+//* Header Styles */
 #header {
   background: #fff;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
@@ -183,6 +166,10 @@ nav {
     margin-right: 10px;
   }
 
+  .logo h1 {
+    font-size: 18px;
+  }
+
   nav {
     display: none;
   }
@@ -206,19 +193,14 @@ nav {
 /* Smaller Mobile Screens (Mobile M - 375px) */
 @media (max-width: 375px) {
   .header-container {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     text-align: left;
     padding: 10px 12px;
-    position: relative; /* Ensures .mobile-nav-toggle positions correctly */
   }
 
   .logo {
     width: auto;
-    display: flex;
-    align-items: center;
     justify-content: flex-start;
     margin-right: 10px;
   }
@@ -227,12 +209,14 @@ nav {
     height: 28px;
   }
 
+  .logo h1 {
+    font-size: 16px;
+  }
+
   .mobile-nav-toggle {
     font-size: 22px;
-    position: absolute;
     right: 10px;
-    top: -30px; /* Moves it up */
-    transform: translateY(-10px); /* Additional upward adjustment */
+    top: 40px;
   }
 }
 
@@ -255,10 +239,14 @@ nav {
     height: 24px;
   }
 
+  .logo h1 {
+    font-size: 14px;
+  }
+
   .mobile-nav-toggle {
     font-size: 20px;
     right: 5px;
-    margin-top: -30px;
+    top: 40px;
   }
 }
 
@@ -281,12 +269,16 @@ nav {
     height: 30px;
   }
 
-  /* Removed font-size from .logo h1 to allow JS to handle it */
+  .logo h1 {
+    font-size: 18px;
+  }
+
   .mobile-nav-toggle {
-    /* Removed font-size, right, and top, as they are now controlled by JS */
+    font-size: 24px;
+    right: 15px;
+    top: 40px; /* 40px top margin for mobile L */
   }
 }
-
 
 /* Dropdown Menu */
 .nav-menu .drop-down ul {
@@ -333,7 +325,6 @@ nav {
     left: -100%;
   }
 }
-
 
 /* Get Started Button */
 .get-started-btn {
@@ -401,9 +392,9 @@ nav {
   border-radius: 10px;
   padding: 10px 0;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 10px;
+  flex-direction: column; /* Make the nav links vertical */
+  justify-content: flex-start; /* Align items at the top */
+  gap: 10px; /* Add spacing between nav links */
 }
 
 .mobile-nav * {
@@ -458,15 +449,6 @@ nav {
 .mobile-nav-active .mobile-nav-toggle i {
   color: #fff;
 }
-
-
-
-
-
-
-
-
-
 
 
 
