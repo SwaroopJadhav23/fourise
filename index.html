@@ -88,23 +88,37 @@
 
     const screenWidth = window.innerWidth;
 
-    // Ensure logo is aligned to the left
-    logoText.style.textAlign = "left";
-
     // Adjust font size based on screen width
+    let fontSize;
     if (screenWidth <= 320) {
-        logoText.style.fontSize = "12px";  // Extra Small Screens
+        fontSize = "12px";  // Extra Small Screens
     } else if (screenWidth <= 375) {
-        logoText.style.fontSize = "14px"; // Small Mobile Screens
+        fontSize = "14px"; // Small Mobile Screens
     } else if (screenWidth <= 425) {
-        logoText.style.fontSize = "15px"; // Mobile L (Increased size for better visibility)
+        fontSize = "16px"; // Mobile L (Slightly increased for better visibility)
     } else {
-        logoText.style.fontSize = "24px"; // Default for larger screens
+        fontSize = "24px"; // Default for larger screens
+    }
+
+    // Apply styles only if necessary to reduce unnecessary reflows
+    if (logoText.style.fontSize !== fontSize) {
+        logoText.style.fontSize = fontSize;
+        logoText.style.textAlign = "left";
     }
 }
 
+// Optimize event listeners by using a debounce function
+function debounce(func, delay) {
+    let timeout;
+    return function () {
+        clearTimeout(timeout);
+        timeout = setTimeout(func, delay);
+    };
+}
+
 window.addEventListener("load", adjustLogoFontSize);
-window.addEventListener("resize", adjustLogoFontSize);
+window.addEventListener("resize", debounce(adjustLogoFontSize, 100));
+
 
 
 </script>

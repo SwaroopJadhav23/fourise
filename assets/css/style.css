@@ -210,14 +210,18 @@ nav {
 /* Smaller Mobile Screens (Mobile M - 375px) */
 @media (max-width: 375px) {
   .header-container {
+    display: flex; /* Ensures proper alignment */
     flex-direction: row;
     justify-content: space-between;
+    align-items: center; /* Aligns items vertically */
     text-align: left;
     padding: 10px 12px;
   }
 
   .logo {
     width: auto;
+    display: flex; /* Ensures the logo stays aligned */
+    align-items: center;
     justify-content: flex-start;
     margin-right: 10px;
   }
@@ -228,14 +232,18 @@ nav {
 
   .logo h1 {
     font-size: 10px !important; /* Reduced font size */
+    margin-left: 5px; /* Ensures spacing between logo and text */
   }
 
   .mobile-nav-toggle {
     font-size: 22px;
+    position: absolute; /* Ensures precise placement */
+    top: 10px; /* Adjusted for better positioning */
     right: 10px;
-    top: 40px;
+    margin-top: -40px; /* Removed negative margin */
   }
 }
+
 
 /* Extra Small Mobile Screens (Mobile S - 320px) */
 @media (max-width: 320px) {
@@ -263,7 +271,7 @@ nav {
   .mobile-nav-toggle {
     font-size: 20px;
     right: 5px;
-    top: -40px;
+    margin-top: -30px;
   }
 }
 
