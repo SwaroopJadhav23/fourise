@@ -65,6 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------------------------------------------------
+/*--------------------------------------------------------------
 //* Header Styles */
 #header {
   background: #fff;
@@ -73,33 +74,32 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   width: 100%;
   z-index: 999;
-  padding: 10px 0; /* Reduced padding */
+  padding: 15px 0;
 }
 
 .header-container {
   display: flex;
-  justify-content: space-between; /* Adjusted for better alignment */
+  justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0 10px; /* Added padding for better alignment */
 }
 
 /* Logo */
 .logo {
   display: flex;
   align-items: center;
-  width: auto; /* Adjusted to fit on smaller screens */
+  width: 50%;
   justify-content: flex-start;
 }
 
 .logo img {
-  height: 35px; /* Reduced logo image height */
-  margin-right: 8px;
+  height: 40px;
+  margin-right: 10px;
   max-width: 100%;
 }
 
 .logo h1 {
-  font-size: 20px; /* Reduced font size */
+  font-size: 24px;
   font-weight: bold;
   margin: 0;
   padding: 0;
@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navigation */
 nav {
-  width: auto; /* Adjusted to fit well on screen */
+  width: 50%;
   text-align: right;
 }
 
@@ -162,12 +162,12 @@ nav {
   }
 
   .logo img {
-    height: 30px; /* Reduced image height on mobile */
+    height: 30px;
     margin-right: 10px;
   }
 
   .logo h1 {
-    font-size: 18px; /* Reduced font size for mobile */
+    font-size: 18px;
   }
 
   nav {
@@ -206,11 +206,11 @@ nav {
   }
 
   .logo img {
-    height: 28px; /* Smaller image on very small screens */
+    height: 28px;
   }
 
   .logo h1 {
-    font-size: 16px; /* Smaller text on mobile M */
+    font-size: 16px;
   }
 
   .mobile-nav-toggle {
@@ -236,11 +236,11 @@ nav {
   }
 
   .logo img {
-    height: 24px; /* Even smaller image */
+    height: 24px;
   }
 
   .logo h1 {
-    font-size: 14px; /* Further reduced font size */
+    font-size: 14px;
   }
 
   .mobile-nav-toggle {
@@ -266,7 +266,7 @@ nav {
   }
 
   .logo img {
-    height: 30px; /* Adjusted logo height for mobile L */
+    height: 30px;
   }
 
   .logo h1 {
@@ -289,10 +289,11 @@ nav {
   z-index: 99;
   opacity: 0;
   visibility: hidden;
-  padding: 10px 0;
+  padding: 5px 0; /* Reduced padding to reduce height */
   background: #fff;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
+  background-color: yellow;
 }
 
 .nav-menu .drop-down:hover > ul {
@@ -316,6 +317,7 @@ nav {
   top: 0;
   left: 100%;
 }
+
 
 @media (max-width: 1366px) {
   .nav-menu .drop-down .drop-down ul {
@@ -381,66 +383,77 @@ nav {
 .mobile-nav {
   position: fixed;
   top: 55px;
-  right: 15px;
+  right: 0; /* Align to the right side of the screen */
   bottom: 15px;
-  left: 15px;
+  width: 250px; /* Reduced width of the dropdown box */
   z-index: 9999;
   background: #fff;
   transition: ease-in-out 0.2s;
   opacity: 0;
   visibility: hidden;
   border-radius: 10px;
-  padding: 10px 0;
+  padding: 5px 0; /* Reduced padding to decrease height */
   display: flex;
   flex-direction: column; /* Make the nav links vertical */
   justify-content: flex-start; /* Align items at the top */
-  gap: 10px; /* Add spacing between nav links */
+  gap: 5px; /* Increased gap between nav links */
+  max-height: 50%; /* Limit the height */
+  overflow-y: auto; /* Allow scrolling if items overflow */
 }
 
-.mobile-nav * {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+/* Mobile Nav Link Styling */
+.mobile-nav a {
+  text-decoration: none;
+  color: #111;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s;
+  padding: 5px 15px; /* Added padding for better spacing */
+  margin-top: 10px; /* Add top margin to create spacing between nav links */
+  display: inline-block; /* Ensure links are inline */
 }
 
-.mobile-nav .drop-down > a:after {
-  content: "\ea99";
-  font-family: IcoFont;
-  padding-left: 10px;
-  position: absolute;
-  right: 15px;
+/* Adjust space between links horizontally */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Create vertical space between links */
 }
 
-.mobile-nav .active.drop-down > a:after {
-  content: "\eaa1";
-}
-
+/* Dropdown menu specific styles */
 .mobile-nav .drop-down ul {
   display: none;
   overflow: hidden;
+  width: 100%; /* Ensure the dropdown menu takes the full width of the parent */
+  padding: 5px 0; /* Reduced padding for a smaller height */
+  max-height: 200px; /* Set a max height for the dropdown */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
 }
 
 .mobile-nav .drop-down li {
-  padding-left: 20px;
+  padding-left: 20px; /* Adjust padding inside the dropdown items */
+  padding-top: 5px; /* Reduced padding between items */
+  padding-bottom: 5px; /* Reduced padding between items */
 }
 
+/* Mobile Navigation Overlay (Grey Background) */
 .mobile-nav-overly {
-  width: 100%;
-  height: 100%;
+  width: 100%; /* Full width of the screen */
+  height: 100%; /* Full height of the screen */
   z-index: 9997;
   top: 0;
   left: 0;
   position: fixed;
-  background: rgba(0, 0, 0, 0.6);
-  overflow: hidden;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent grey background */
   display: none;
   transition: ease-in-out 0.2s;
 }
 
-.mobile-nav-active {
-  overflow: hidden;
+.mobile-nav-active .mobile-nav-overly {
+  display: block; /* Show the overlay when navigation is active */
 }
 
+/* Show the mobile nav when active */
 .mobile-nav-active .mobile-nav {
   opacity: 1;
   visibility: visible;
@@ -449,7 +462,6 @@ nav {
 .mobile-nav-active .mobile-nav-toggle i {
   color: #fff;
 }
-
 
 /*--------------------------------------------------------------
 
