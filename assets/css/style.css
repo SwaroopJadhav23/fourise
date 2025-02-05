@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------------------------------------------------
-//* Header Styles */
+/* Header Styles */
 #header {
   background: #fff;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
@@ -183,8 +183,6 @@ nav {
     margin-right: 10px;
   }
 
-    
-
   nav {
     display: none;
   }
@@ -229,18 +227,14 @@ nav {
     height: 28px;
   }
 
-  
-
   .mobile-nav-toggle {
     font-size: 22px;
     position: absolute;
     right: 10px;
-    top: -30px ; /* Moves it up */
+    top: -30px; /* Moves it up */
     transform: translateY(-10px); /* Additional upward adjustment */
   }
 }
-
-
 
 /* Extra Small Mobile Screens (Mobile S - 320px) */
 @media (max-width: 320px) {
@@ -260,7 +254,6 @@ nav {
   .logo img {
     height: 24px;
   }
-
 
   .mobile-nav-toggle {
     font-size: 20px;
@@ -289,11 +282,11 @@ nav {
   }
 
   /* Removed font-size from .logo h1 to allow JS to handle it */
-
   .mobile-nav-toggle {
     /* Removed font-size, right, and top, as they are now controlled by JS */
   }
 }
+
 
 /* Dropdown Menu */
 .nav-menu .drop-down ul {

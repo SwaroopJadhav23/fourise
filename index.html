@@ -90,7 +90,7 @@
 
     const screenWidth = window.innerWidth;
 
-    // Adjust font size based on screen width
+    // Adjust font size and margin-left based on screen width
     let fontSize;
     let marginLeft;
     
@@ -99,9 +99,9 @@
         marginLeft = "-20px"; // Extra Small Screens margin
     } else if (screenWidth <= 375) {
         fontSize = "16px"; // Small Mobile Screens
-        marginLeft = "-8px"; // Small Mobile Screens margin
+        marginLeft = "-1px"; // Small Mobile Screens margin
     } else if (screenWidth <= 425) {
-        fontSize = "16px"; // Mobile L (Ensured to be 12px for 425px)
+        fontSize = "16px"; // Mobile L
         marginLeft = "-5px"; // Mobile L margin
     } else {
         fontSize = "24px"; // Default for larger screens
@@ -131,7 +131,7 @@
     } else if (screenWidth <= 425) {
         marginTop = "-30px"; // Mobile L
     } else {
-        marginTop = "0px"; // Default for larger screens
+        marginTop = "0px";  // Default for larger screens
     }
 
     // Apply margin-top for mobile navigation toggle
@@ -141,7 +141,7 @@
 }
 
 // Apply styles immediately to prevent flickering issue
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     adjustLogoAndNav();
 });
 
@@ -155,6 +155,7 @@ function debounce(func, delay) {
 }
 
 window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
+
 
 
 
