@@ -212,10 +212,9 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
             <h1>Welcome to Fourise Software Solutions Pvt. Ltd.</h1>
             <h2 class="hero-subtitle">We solve the problem and provide optimal solutions for your business.</h2>
             <div class="btn-get-started-container">
-  <a href="about.html" class="btn-get-started scrollto">Know More</a>
-  <a href="contact.html" class="btn-get-started scrollto">Contact Us</a>
-</div>
-
+              <a href="about.html" class="btn-get-started scrollto">Know More</a>
+              <a href="contact.html" class="btn-get-started scrollto">Contact Us</a>
+            </div>
           </div>
 
           <!-- Right Content -->
@@ -228,6 +227,45 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
     </div>
   </div>
 </section>
+
+<!-- JavaScript to Ensure Buttons are Horizontal on 375px Screen -->
+<script>
+  function adjustButtonsForMobile() {
+    const buttonsContainer = document.querySelector('.btn-get-started-container');
+    const buttons = document.querySelectorAll('.btn-get-started');
+
+    if (window.innerWidth <= 375) {
+      // Apply styles to make buttons horizontal
+      buttonsContainer.style.display = 'flex';
+      buttonsContainer.style.flexDirection = 'row'; // Horizontal alignment
+      buttonsContainer.style.justifyContent = 'flex-start'; // Align buttons to the left
+
+      buttons.forEach(button => {
+        button.style.marginRight = '10px'; // Space between buttons
+        button.style.fontSize = '12px'; // Adjust font size for better fit
+        button.style.padding = '6px 12px'; // Adjust padding
+      });
+    } else {
+      // Reset styles when screen size is larger than 375px
+      buttonsContainer.style.display = '';
+      buttonsContainer.style.flexDirection = '';
+      buttonsContainer.style.justifyContent = '';
+
+      buttons.forEach(button => {
+        button.style.marginRight = ''; // Reset margin
+        button.style.fontSize = ''; // Reset font size
+        button.style.padding = ''; // Reset padding
+      });
+    }
+  }
+
+  // Call on page load
+  adjustButtonsForMobile();
+
+  // Add event listener for window resize
+  window.addEventListener("resize", adjustButtonsForMobile);
+</script>
+
 
 <script>
   window.addEventListener('DOMContentLoaded', function() {

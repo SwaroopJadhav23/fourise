@@ -579,53 +579,7 @@ nav {
   }
 }
 
-/* For Mobile M (375px) */
-@media (max-width: 375px) { 
-  #hero {
-    padding: 30px; /* Reduced padding */
-    height: auto;
-    text-align: left; /* Align text to the left */
-  }
 
-  #hero h1 {
-    font-size: 28px; /* Adjusted font size for Mobile M */
-    margin-top: 15px;
-    color: #000; /* Set text color to black */
-  }
-
-  .hero-subtitle-1 {
-    font-size: 20px; /* Adjusted font size for Mobile M */
-    line-height: 28px;
-    margin-bottom: 12px;
-    font-weight: 400;
-    color: #000; /* Set text color to black */
-  }
-
-  /* Ensure buttons are aligned beside one another */
-  .btn-get-started-container {
-    display: flex; /* Align buttons side by side */
-    gap: 10px; /* Space between the buttons */
-  }
-
-  #hero .btn-get-started {
-    font-size: 12px;
-    padding: 6px 15px;
-    margin-right: 10px; /* Space between buttons */
-    display: inline-block; /* Align buttons side by side */
-  }
-
-  #hero .btn-get-started:hover {
-    background: transparent;
-    color: #e03a3c;
-    border: 2px solid #e03a3c;
-  }
-
-  .hero-image dotlottie-wc {
-    max-width: 100%;
-    width: 100%;
-    margin-top: 15px;
-  }
-}
 
 /* For Mobile S (320px) */
 @media (max-width: 320px) { 
@@ -634,13 +588,13 @@ nav {
     height: auto;
     text-align: left; /* Align text to the left */
     margin-top: 0%; /* Reset margin-top */
+    background-color: white !important; /* Override background color for 320px */
   }
 
   #hero h1 {
     font-size: 24px; /* Adjusted font size for Mobile S */
     margin-top: 5%; /* Set margin-top to 0 initially */
     color: #000; /* Set text color to black */
-
   }
 
   .hero-subtitle-1 {
@@ -651,17 +605,22 @@ nav {
     color: #000; /* Set text color to black */
   }
 
-  /* Align buttons horizontally inside their parent container */
+  /* Ensure buttons stay in a single row */
   .btn-get-started-container {
-    display: flex; /* Align buttons side by side */
-    gap: 10px; /* Space between the buttons */
+    display: flex; /* Enables flexbox */
+    flex-wrap: nowrap; /* Prevents wrapping */
+    gap: 6px; /* Space between buttons */
+    justify-content: center; /* Centers the buttons */
+    align-items: center;
   }
 
   #hero .btn-get-started {
     font-size: 10px;
-    padding: 5px 12px;
-    margin-right: 10px; /* Space between buttons */
-    display: inline-block; /* Align buttons side by side */
+    padding: 5px 10px;
+    width: auto; /* Ensures buttons don’t shrink */
+    flex: 1; /* Distributes space evenly */
+    text-align: center;
+    white-space: nowrap; /* Prevents text from breaking */
   }
 
   #hero .btn-get-started:hover {
@@ -676,6 +635,7 @@ nav {
     margin-top: 10px;
   }
 }
+
 
 /* Handle smaller screen heights */
 @media (max-height: 500px) { 
