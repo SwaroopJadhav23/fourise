@@ -183,9 +183,7 @@ nav {
     margin-right: 10px;
   }
 
-  .logo h1 {
-    font-size: 18px;
-  }
+    
 
   nav {
     display: none;
@@ -216,7 +214,7 @@ nav {
     align-items: center;
     text-align: left;
     padding: 10px 12px;
-    position: relative; /* Ensure relative positioning */
+    position: relative; /* Ensures .mobile-nav-toggle positions correctly */
   }
 
   .logo {
@@ -231,16 +229,14 @@ nav {
     height: 28px;
   }
 
-  .logo h1 {
-    font-size: 10px !important;
-    margin-left: 5px;
-  }
+  
 
   .mobile-nav-toggle {
     font-size: 22px;
     position: absolute;
-    top: -30px; /* Move it further up */
     right: 10px;
+    top: -30px ; /* Moves it up */
+    transform: translateY(-10px); /* Additional upward adjustment */
   }
 }
 
@@ -265,9 +261,6 @@ nav {
     height: 24px;
   }
 
-  .logo h1 {
-    font-size: 9px !important; /* Further reduced */
-  }
 
   .mobile-nav-toggle {
     font-size: 20px;
@@ -295,14 +288,10 @@ nav {
     height: 30px;
   }
 
-  .logo h1 {
-    font-size: 11px !important; /* Adjusted for 425px */
-  }
+  /* Removed font-size from .logo h1 to allow JS to handle it */
 
   .mobile-nav-toggle {
-    font-size: 24px;
-    right: 15px;
-    top: 40px;
+    /* Removed font-size, right, and top, as they are now controlled by JS */
   }
 }
 
@@ -351,6 +340,7 @@ nav {
     left: -100%;
   }
 }
+
 
 /* Get Started Button */
 .get-started-btn {

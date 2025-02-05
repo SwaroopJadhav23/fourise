@@ -62,7 +62,7 @@
   <!-- Header -->
  <header id="header" style="background: #fff; box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); position: fixed; top: 0; width: 100%; z-index: 999; padding: 15px 0;">
     <div style="display: flex; justify-content: center; align-items: center;">
-        <h1 id="logoText" style="font-size: 24px; font-weight: bold; margin: 0; padding: 0; color: #e03a3c;">
+        <h1 id="logoText" style=" font-weight: bold; margin: 0; padding: 0; color: #e03a3c;">
             <a href="index.html" style="text-decoration: none; color: inherit;">
                 Fourise <span style="color: #000;">Software Solutions Pvt. Ltd.</span>
             </a>
@@ -82,32 +82,65 @@
 </header>
 
 <script>
-    function adjustLogoFontSize() {
+  function adjustLogoAndNav() {
     const logoText = document.getElementById("logoText");
-    if (!logoText) return;
+    const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+
+    if (!logoText || !mobileNavToggle) return;
 
     const screenWidth = window.innerWidth;
 
     // Adjust font size based on screen width
     let fontSize;
+    let marginLeft;
+    
     if (screenWidth <= 320) {
         fontSize = "12px";  // Extra Small Screens
+        marginLeft = "5px"; // Extra Small Screens margin
     } else if (screenWidth <= 375) {
         fontSize = "14px"; // Small Mobile Screens
+        marginLeft = "8px"; // Small Mobile Screens margin
     } else if (screenWidth <= 425) {
-        fontSize = "16px"; // Mobile L (Slightly increased for better visibility)
+        fontSize = "12px"; // Mobile L (Ensured to be 12px for 425px)
+        marginLeft = "10px"; // Mobile L margin
     } else {
         fontSize = "24px"; // Default for larger screens
+        marginLeft = "0px"; // Default margin for larger screens
     }
 
-    // Apply styles only if necessary to reduce unnecessary reflows
+    // Apply font size
     if (logoText.style.fontSize !== fontSize) {
         logoText.style.fontSize = fontSize;
         logoText.style.textAlign = "left";
     }
+
+    // Apply margin-left for logo text
+    if (logoText.style.marginLeft !== marginLeft) {
+        logoText.style.marginLeft = marginLeft;
+    }
+
+    // Adjust margin-top for .mobile-nav-toggle dynamically
+    let marginTop;
+    if (screenWidth <= 320) {
+        marginTop = "-20px";  // Extra Small Screens
+    } else if (screenWidth <= 375) {
+        marginTop = "-30px";  // Small Mobile Screens
+    } else if (screenWidth <= 425) {
+        marginTop = "-30px"; // Mobile L
+    } else {
+        marginTop = "0px"; // Default for larger screens
+    }
+
+    // Apply margin-top for mobile navigation toggle
+    if (mobileNavToggle.style.marginTop !== marginTop) {
+        mobileNavToggle.style.marginTop = marginTop;
+    }
 }
 
-// Optimize event listeners by using a debounce function
+// Apply styles immediately to prevent flickering issue
+document.addEventListener("DOMContentLoaded", adjustLogoAndNav);
+
+// Optimize event listeners with debounce
 function debounce(func, delay) {
     let timeout;
     return function () {
@@ -116,8 +149,8 @@ function debounce(func, delay) {
     };
 }
 
-window.addEventListener("load", adjustLogoFontSize);
-window.addEventListener("resize", debounce(adjustLogoFontSize, 100));
+window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
+
 
 
 
