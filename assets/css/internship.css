@@ -817,6 +817,7 @@ body {
   .internship-card {
     height: 150px; /* Increased height */
     padding: 10px;
+    margin-bottom: 2%;
   }
 
   .internship-logo img {
@@ -835,6 +836,7 @@ body {
   .apply-btn {
     padding: 6px 9px;
     font-size: 9px;
+    margin-bottom: 15px;
   }
 }
 

@@ -78,37 +78,112 @@
         </div>
 
     <script>
-      // Highlight the active nav link
-      document.addEventListener("DOMContentLoaded", function () {
-        const navLinks = document.querySelectorAll('.nav-item');
+  // Adjust logo and nav based on screen width
+  function adjustLogoAndNav() {
+    const logoText = document.getElementById("logoText");
+    const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
 
-        navLinks.forEach(link => {
-          link.addEventListener('click', function () {
-            // Remove active styles from all links
-            navLinks.forEach(item => {
-              const anchor = item.querySelector('a');
-              anchor.style.color = '#111';
-              anchor.style.fontWeight = '500';
-            });
+    if (!logoText || !mobileNavToggle) return;
 
-            // Add active styles to the clicked link
-            const activeAnchor = this.querySelector('a');
-            activeAnchor.style.color = '#e03a3c';
-            activeAnchor.style.fontWeight = 'bold';
-          });
+    const screenWidth = window.innerWidth;
+
+    // Adjust font size and margin-left based on screen width
+    let fontSize;
+    let marginLeft;
+    
+    if (screenWidth <= 320) {
+        fontSize = "14px";  // Extra Small Screens
+        marginLeft = "-20px"; // Extra Small Screens margin
+    } else if (screenWidth <= 375) {
+        fontSize = "16px"; // Small Mobile Screens
+        marginLeft = "-1px"; // Small Mobile Screens margin
+    } else if (screenWidth <= 425) {
+        fontSize = "16px"; // Mobile L
+        marginLeft = "-5px"; // Mobile L margin
+    } else {
+        fontSize = "24px"; // Default for larger screens
+        marginLeft = "0px"; // Default margin for larger screens
+    }
+
+    // Log the font size and margin left values
+    console.log(`Font Size: ${fontSize}, Margin Left: ${marginLeft}`);
+
+    // Apply font size
+    if (logoText.style.fontSize !== fontSize) {
+        logoText.style.fontSize = fontSize;
+        logoText.style.textAlign = "left";
+    }
+
+    // Apply margin-left for logo text
+    if (logoText.style.marginLeft !== marginLeft) {
+        logoText.style.marginLeft = marginLeft;
+    }
+
+    // Adjust margin-top for .mobile-nav-toggle dynamically
+    let marginTop;
+    if (screenWidth <= 320) {
+        marginTop = "-21px";  // Extra Small Screens
+    } else if (screenWidth <= 375) {
+        marginTop = "-30px";  // Small Mobile Screens
+    } else if (screenWidth <= 425) {
+        marginTop = "-30px"; // Mobile L
+    } else {
+        marginTop = "0px";  // Default for larger screens
+    }
+
+    // Apply margin-top for mobile navigation toggle
+    if (mobileNavToggle.style.marginTop !== marginTop) {
+        mobileNavToggle.style.marginTop = marginTop;
+    }
+  }
+
+  // Apply styles immediately to prevent flickering issue
+  document.addEventListener("DOMContentLoaded", function () {
+    adjustLogoAndNav();
+
+    // Highlight the active nav link
+    const navLinks = document.querySelectorAll('.nav-item');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        // Remove active styles from all links
+        navLinks.forEach(item => {
+          const anchor = item.querySelector('a');
+          anchor.style.color = '#111';
+          anchor.style.fontWeight = '500';
         });
 
-        // Retain active state based on current page
-        const currentPage = window.location.pathname.split("/").pop();
-        navLinks.forEach(link => {
-          const anchor = link.querySelector('a');
-          if (anchor.getAttribute('href') === currentPage) {
-            anchor.style.color = '#e03a3c';
-            anchor.style.fontWeight = 'bold';
-          }
-        });
+        // Add active styles to the clicked link
+        const activeAnchor = this.querySelector('a');
+        activeAnchor.style.color = '#e03a3c';
+        activeAnchor.style.fontWeight = 'bold';
       });
-    </script>
+    });
+
+    // Retain active state based on current page
+    const currentPage = window.location.pathname.split("/").pop();
+    navLinks.forEach(link => {
+      const anchor = link.querySelector('a');
+      if (anchor.getAttribute('href') === currentPage) {
+        anchor.style.color = '#e03a3c';
+        anchor.style.fontWeight = 'bold';
+      }
+    });
+  });
+
+  // Optimize event listeners with debounce for resizing
+  function debounce(func, delay) {
+    let timeout;
+    return function () {
+        clearTimeout(timeout);
+        timeout = setTimeout(func, delay);
+    };
+  }
+
+  window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
+</script>
+
+    
   </header>
 
 
