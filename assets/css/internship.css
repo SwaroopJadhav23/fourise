@@ -405,6 +405,7 @@ nav {
   color: #111111;
 }
 
+/* Mobile Navigation Dropdown */
 .mobile-nav {
   position: fixed;
   top: 55px;
@@ -412,7 +413,7 @@ nav {
   bottom: 15px;
   width: 250px; /* Reduced width of the dropdown box */
   z-index: 9999;
-  background: #fff;
+  background: #fff; /* Solid white background by default */
   transition: ease-in-out 0.2s;
   opacity: 0;
   visibility: hidden;
@@ -422,8 +423,15 @@ nav {
   flex-direction: column; /* Make the nav links vertical */
   justify-content: flex-start; /* Align items at the top */
   gap: 5px; /* Increased gap between nav links */
-  max-height: 43%; /* Limit the height */
+  max-height: 50%; /* Limit the height */
   overflow-y: auto; /* Allow scrolling if items overflow */
+}
+
+/* When mobile nav is active, change background to light grey */
+.mobile-nav-active .mobile-nav {
+  opacity: 1;
+  visibility: visible;
+  background: #d3d3d3; /* Solid light grey background when active */
 }
 
 /* Mobile Nav Link Styling */
@@ -487,6 +495,7 @@ nav {
 .mobile-nav-active .mobile-nav-toggle i {
   color: #fff;
 }
+
 
 
 
