@@ -398,7 +398,7 @@ nav {
   flex-direction: column; /* Make the nav links vertical */
   justify-content: flex-start; /* Align items at the top */
   gap: 5px; /* Increased gap between nav links */
-  max-height: 50%; /* Limit the height */
+  max-height: 60%; /* Limit the height */
   overflow-y: auto; /* Allow scrolling if items overflow */
 }
 

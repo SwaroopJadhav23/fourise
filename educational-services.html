@@ -26,7 +26,7 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/web.css" rel="stylesheet">
+ <link href="assets/css/web.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Presento - v1.1.1
@@ -58,58 +58,144 @@
   <!-- ======= Header ======= -->
  <!-- Header -->
 <header id="header" style="background: #fff; box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); position: fixed; top: 0; width: 100%; z-index: 999; padding: 15px 0;">
-        <div style="display: flex; justify-content: center; align-items: center;">
-         <h1 style="font-size: 24px; font-weight: bold; margin: 0; padding: 0; color: #e03a3c;">
-      <a href="index.html" style="text-decoration: none; color: inherit;">
-        Fourise <span style="color: #000;">Software Solutions Pvt. Ltd.</span>
-      </a>
-    </h1>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <h1 id="logoText" style=" font-weight: bold; margin: 0; padding: 0; color: #e03a3c;">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                Fourise <span style="color: #000;">Software Solutions Pvt. Ltd.</span>
+            </a>
+        </h1>
 
-          <nav style="margin-left: 50px;">
+        <nav style="margin-left: 50px;">
             <ul class="nav-menu" style="list-style: none; display: flex; margin: 0; padding: 0;">
               <li class="nav-item" style="margin: 0 20px;"><a href="index.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">Home</a></li>
               <li class="nav-item" style="margin: 0 20px;"><a href="about.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">About</a></li>
               <li class="nav-item" style="margin: 0 20px;"><a href="services.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">Services</a></li>
+              <li class="nav-item" style="margin: 0 20px;"><a href="career.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">Career</a></li>
               <li class="nav-item" style="margin: 0 20px;"><a href="product.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">Product</a></li>
               <li class="nav-item" style="margin: 0 20px;"><a href="contact.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">Contact</a></li>
-              <li class="nav-item" style="margin: 0 20px;"><a href="internship.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">Internship</a></li>
               <li class="nav-item" style="margin: 0 20px;"><a href="services.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">Back</a></li>
             </ul>
           </nav>
     </div>
-    <script>
-      // Highlight the active nav link
-      document.addEventListener("DOMContentLoaded", function () {
-        const navLinks = document.querySelectorAll('.nav-item');
+</header>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll('.nav-item');
+
+    // Function to highlight active nav link
+    function highlightActiveLink() {
         navLinks.forEach(link => {
-          link.addEventListener('click', function () {
-            // Remove active styles from all links
-            navLinks.forEach(item => {
-              const anchor = item.querySelector('a');
-              anchor.style.color = '#111';
-              anchor.style.fontWeight = '500';
-            });
+            link.addEventListener('click', function () {
+                // Reset the styles for all links
+                navLinks.forEach(item => {
+                    const anchor = item.querySelector('a');
+                    anchor.style.color = "#111";  // Default color
+                    anchor.style.fontWeight = "500";  // Default font weight
+                });
 
-            // Add active styles to the clicked link
-            const activeAnchor = this.querySelector('a');
-            activeAnchor.style.color = '#e03a3c';
-            activeAnchor.style.fontWeight = 'bold';
-          });
+                // Apply styles for active link
+                const activeAnchor = this.querySelector('a');
+                activeAnchor.style.color = "#e03a3c";  // Active color
+                activeAnchor.style.fontWeight = "bold";  // Active font weight
+            });
         });
 
-        // Retain active state based on current page
+        // Retain active state based on current page (color applied directly here)
         const currentPage = window.location.pathname.split("/").pop();
         navLinks.forEach(link => {
-          const anchor = link.querySelector('a');
-          if (anchor.getAttribute('href') === currentPage) {
-            anchor.style.color = '#e03a3c';
-            anchor.style.fontWeight = 'bold';
-          }
+            const anchor = link.querySelector('a');
+            if (anchor.getAttribute('href') === currentPage) {
+                anchor.style.color = "#e03a3c";  // Active color
+                anchor.style.fontWeight = "bold";  // Active font weight
+            }
         });
-      });
-    </script>
-  </header>
+    }
+
+    // Run the function to highlight active link
+    highlightActiveLink();
+
+    // Adjust logo and nav on screen resize
+    adjustLogoAndNav();
+});
+
+function adjustLogoAndNav() {
+    const logoText = document.getElementById("logoText");
+    const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+
+    if (!logoText || !mobileNavToggle) return;
+
+    const screenWidth = window.innerWidth;
+
+    // Adjust font size and margin-left based on screen width
+    let fontSize;
+    let marginLeft;
+
+    if (screenWidth <= 320) {
+        fontSize = "14px";  // Extra Small Screens
+        marginLeft = "-20px"; // Extra Small Screens margin
+    } else if (screenWidth <= 375) {
+        fontSize = "16px"; // Small Mobile Screens
+        marginLeft = "-1px"; // Small Mobile Screens margin
+    } else if (screenWidth <= 425) {
+        fontSize = "16px"; // Mobile L
+        marginLeft = "-5px"; // Mobile L margin
+    } else {
+        fontSize = "24px"; // Default for larger screens
+        marginLeft = "0px"; // Default margin for larger screens
+    }
+
+    // Log the font size and margin left values
+    console.log(`Font Size: ${fontSize}, Margin Left: ${marginLeft}`);
+
+    // Apply font size
+    if (logoText.style.fontSize !== fontSize) {
+        logoText.style.fontSize = fontSize;
+        logoText.style.textAlign = "left";
+    }
+
+    // Apply margin-left for logo text
+    if (logoText.style.marginLeft !== marginLeft) {
+        logoText.style.marginLeft = marginLeft;
+    }
+
+    // Adjust margin-top for .mobile-nav-toggle dynamically
+    let marginTop;
+    if (screenWidth <= 320) {
+        marginTop = "-30px";  // Extra Small Screens
+    } else if (screenWidth <= 375) {
+        marginTop = "-30px";  // Small Mobile Screens
+    } else if (screenWidth <= 425) {
+        marginTop = "-30px"; // Mobile L
+    } else {
+        marginTop = "0px";  // Default for larger screens
+    }
+
+    // Apply margin-top for mobile navigation toggle
+    if (mobileNavToggle.style.marginTop !== marginTop) {
+        mobileNavToggle.style.marginTop = marginTop;
+    }
+}
+
+// Apply styles immediately to prevent flickering issue
+document.addEventListener("DOMContentLoaded", function () {
+    adjustLogoAndNav();
+});
+
+// Optimize event listeners with debounce
+function debounce(func, delay) {
+    let timeout;
+    return function () {
+        clearTimeout(timeout);
+        timeout = setTimeout(func, delay);
+    };
+}
+
+window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
+
+
+
+</script>
 
 
   <section class="web-development-section">
