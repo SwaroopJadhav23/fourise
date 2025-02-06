@@ -166,8 +166,6 @@ function adjustLogoAndNav() {
         marginTop = "-30px";  // Small Mobile Screens
     } else if (screenWidth <= 425) {
         marginTop = "-30px"; // Mobile L
-    } else if (screenWidth <= 768) {
-        marginTop = "-20px";  // For 768px screens
     } else {
         marginTop = "0px";  // Default for larger screens
     }
@@ -193,7 +191,6 @@ function debounce(func, delay) {
 }
 
 window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
-
 
 
 

@@ -269,16 +269,13 @@ nav {
     height: 30px;
   }
 
-  .logo h1 {
-    font-size: 18px;
-  }
-
   .mobile-nav-toggle {
     font-size: 24px;
     right: 15px;
     top: 40px; /* 40px top margin for mobile L */
   }
 }
+
 
 /* Dropdown Menu */
 .nav-menu .drop-down ul {
