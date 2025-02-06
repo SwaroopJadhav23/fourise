@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /*--------------------------------------------------------------
 /*--------------------------------------------------------------
-/* Header Styles */
+//* Header Styles */
 #header {
   background: #fff;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
@@ -145,7 +145,7 @@ nav {
   color: #e03a3c;
 }
 
-/* Mobile and Tablet Responsive (<=768px) */
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: row;
@@ -171,13 +171,13 @@ nav {
   }
 
   nav {
-    display: none; /* Hide the desktop navigation on mobile and tablet */
+    display: none;
   }
 
   .mobile-nav-toggle {
     position: fixed;
     right: 15px;
-    top: 40px;
+    top: 40px; /* 40px top margin for mobile */
     z-index: 9998;
     border: 0;
     background: none;
@@ -187,33 +187,6 @@ nav {
     line-height: 1;
     cursor: pointer;
     text-align: right;
-  }
-
-  /* Mobile and Tablet navigation visibility */
-  .mobile-nav {
-    display: none; /* Hide mobile nav by default */
-    position: fixed;
-    top: 55px;
-    right: 15px;
-    bottom: 15px;
-    left: 15px;
-    z-index: 9999;
-    background: #fff;
-    transition: ease-in-out 0.2s;
-    opacity: 0;
-    visibility: hidden;
-    border-radius: 10px;
-    padding: 10px 0;
-    display: flex;
-    flex-direction: column; /* Make the nav links vertical */
-    justify-content: flex-start; /* Align items at the top */
-    gap: 10px; /* Add spacing between nav links */
-  }
-
-  .mobile-nav-active .mobile-nav {
-    display: flex; /* Show mobile nav when active */
-    opacity: 1;
-    visibility: visible;
   }
 }
 
@@ -316,10 +289,11 @@ nav {
   z-index: 99;
   opacity: 0;
   visibility: hidden;
-  padding: 10px 0;
+  padding: 5px 0; /* Reduced padding to reduce height */
   background: #fff;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
+  background-color: yellow;
 }
 
 .nav-menu .drop-down:hover > ul {
@@ -343,6 +317,7 @@ nav {
   top: 0;
   left: 100%;
 }
+
 
 @media (max-width: 1366px) {
   .nav-menu .drop-down .drop-down ul {
@@ -517,6 +492,7 @@ nav {
     margin-top: 30px; /* Updated top margin */
 }
 
+/* Internship Section Paragraph */
 .internship-section p {
     font-size: 16px; /* Smaller font size */
     color: #000;
@@ -524,7 +500,12 @@ nav {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    justify-content: center;
+    text-align: center; /* Center align text */
+    line-height: 1.5; /* Add line-height for better readability */
+    word-wrap: break-word; /* Ensures long words break and text wraps to the next line */
+    display: flex;
+    justify-content: center; /* Align text to the center of the box */
+    flex-wrap: wrap; /* Allow text to wrap */
 }
 
 /* Internship Container */
@@ -904,6 +885,7 @@ body {
     font-size: 16px; /* Larger font size for button */
   }
 }
+
 
 
 
