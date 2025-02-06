@@ -944,7 +944,7 @@ section {
 
 /*----------------------------------------------------- General Styles for the Our Partners Section ------------------------------------------ */
 /* Section Wrapper */
-.partners-wrapper {
+.slider-wrapper {
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -955,14 +955,14 @@ section {
 }
 
 /* Slider Container */
-.partners-container {
+.slider-container {
   display: flex; /* Arrange slides horizontally */
   transition: transform 1s ease; /* Smooth transition for sliding */
   width: 500%; /* Adjust width based on the number of slides (5 slides = 500%) */
 }
 
 /* Individual Slide */
-.partners-slide {
+.slider-slide {
   width: 20%; /* Each slide takes 1/5th of the container width */
   flex-shrink: 0;
   padding: 20px;
@@ -972,14 +972,14 @@ section {
 }
 
 /* Images in Slides */
-.partners-slide img {
+.slider-slide img {
   width: 23%; /* Default for slides with 4 images */
   height: auto; /* Maintain aspect ratio */
 }
 
 /* Specific for slides with 5 images */
-.partners-slide:nth-child(4) img,
-.partners-slide:nth-child(5) img {
+.slider-slide:nth-child(4) img,
+.slider-slide:nth-child(5) img {
   width: 18%; /* Adjusted width for 5 images */
 }
 
@@ -1002,17 +1002,17 @@ p {
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
-  .partners-slide {
+  .slider-slide {
     flex-direction: column;
     justify-content: center;
   }
 
-  .partners-slide img {
+  .slider-slide img {
     width: 40%; /* Larger images for smaller screens */
     margin-bottom: 10px; /* Add space between stacked images */
   }
 
-  .partners-wrapper {
+  .slider-wrapper {
     height: auto; /* Adjust height on smaller screens */
   }
 
@@ -1024,6 +1024,7 @@ p {
     font-size: 16px;
   }
 }
+
 
 
 

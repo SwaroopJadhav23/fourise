@@ -364,7 +364,7 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
   <!-- ======= Features with Pie Chart ======= -->
 <section id="features">
   <div class="container" data-aos="fade-up">
-    <h1 class="section-title">
+    <h1 class="section-title" id="featuresTitle">
       Key Features of <span class="highlight-text">Fourise</span> Software Solutions
     </h1>
 
@@ -377,12 +377,12 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
 
       <!-- Labels on the right side -->
       <div class="col-lg-6 order-lg-2 order-2 d-flex flex-column justify-content-center">
-        <ul>
-          <li><span class="bullet-red">●</span> Optimal Solution for rigid problems</li>
-          <li><span class="bullet-blue">●</span> Quality-based product with increased efficiency</li>
-          <li><span class="bullet-green">●</span> Easy-to-use systems</li>
-          <li><span class="bullet-teal">●</span> Maximum output with minimal resources</li>
-          <li><span class="bullet-pink">●</span> Security privileges preserved</li>
+        <ul id="featuresList">
+          <li><span class="bullet">●</span> Optimal Solution for rigid problems</li>
+          <li><span class="bullet">●</span> Quality-based product with increased efficiency</li>
+          <li><span class="bullet">●</span> Easy-to-use systems</li>
+          <li><span class="bullet">●</span> Maximum output with minimal resources</li>
+          <li><span class="bullet">●</span> Security privileges preserved</li>
         </ul>
       </div>
     </div>
@@ -394,6 +394,52 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
 <!-- Add this at the bottom to load Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+  // Function to adjust font sizes and remove extra space
+  function adjustStyles() {
+    const width = window.innerWidth;
+    const title = document.getElementById("featuresTitle");
+    const list = document.getElementById("featuresList");
+    const items = document.querySelectorAll("#featuresList li");
+    const bullets = document.querySelectorAll("#featuresList .bullet");
+
+    // Align text properly
+    list.style.textAlign = "left";
+    list.style.padding = "0"; // Remove unnecessary padding
+    list.style.margin = "0"; // Remove unnecessary margin
+    list.style.display = "flex";
+    list.style.flexDirection = "column";
+    list.style.gap = "5px"; // Reduce space between items
+
+    items.forEach(item => {
+      item.style.margin = "0"; // Remove extra margins from each list item
+      item.style.padding = "2px 0"; // Minimal padding for spacing control
+      item.style.whiteSpace = "nowrap"; // Prevent text wrapping
+    });
+
+    // Adjust font sizes based on screen size
+    if (width <= 320) {
+      title.style.fontSize = "22px";
+      list.style.fontSize = "12px";
+      bullets.forEach(span => span.style.fontSize = "10px");
+    } else if (width <= 375) {
+      title.style.fontSize = "24px";
+      list.style.fontSize = "13px";
+      bullets.forEach(span => span.style.fontSize = "11px");
+    } else if (width <= 425) {
+      title.style.fontSize = "26px";
+      list.style.fontSize = "14px";
+      bullets.forEach(span => span.style.fontSize = "12px");
+    } else {
+      title.style.fontSize = "36px";
+      list.style.fontSize = "16px";
+      bullets.forEach(span => span.style.fontSize = "14px");
+    }
+  }
+
+  // Adjust styles on page load and window resize
+  window.addEventListener("load", adjustStyles);
+  window.addEventListener("resize", adjustStyles);
+
   // Data for Pie Chart
   const ctx = document.getElementById('featuresPieChart').getContext('2d');
   const featuresPieChart = new Chart(ctx, {
@@ -433,8 +479,9 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
 
 
 
+
 <!-- ======= Hero Section with Horizontal Slider ======= -->
-<section id="hero" class="partners-wrapper d-flex align-items-center" style="background-color: #1b1b1b; padding: 60px 0; height: 70vh; border-radius: 60px;">
+<section id="carouselSection" class="slider-wrapper d-flex align-items-center" style="background-color: #1b1b1b; padding: 60px 0; height: 70vh; border-radius: 60px;">
   <div class="container-fluid" data-aos="zoom-out" data-aos-delay="100">
     <div class="row justify-content-center">
       <div class="col-xl-10">
@@ -448,14 +495,14 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
           <!-- Slider Container -->
           <div class="col-xl-12" style="overflow: hidden; position: relative; border-radius: 30px;">
             <!-- Previous Button -->
-            <button id="prevButton" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: none; border: none; cursor: pointer; z-index: 10;">
+            <button id="prevButtonSlider" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: none; border: none; cursor: pointer; z-index: 10;">
               <img src="assets/img/partner/previous.png" alt="Previous" style="width: 40px; height: 40px;" />
             </button>
 
             <!-- Slider -->
-            <div id="partnersContainer" class="partners-container" style="display: flex; transition: transform 1s ease; width: 500%; border-radius: 30px;">
+            <div id="sliderContainer" class="slider-container" style="display: flex; transition: transform 1s ease; width: 500%; border-radius: 30px;">
               <!-- Slide 1 -->
-              <div class="partners-slide" style="width: 20%; display: flex; align-items: center; justify-content: space-between;">
+              <div class="slider-slide" style="width: 20%; display: flex; align-items: center; justify-content: space-between;">
                 <div style="flex: 1; display: flex; justify-content: space-between; padding: 10px;">
                   <img src="assets/img/partner/1.jpg" alt="Image 1" style="width: 23%; height: auto; border-radius: 20px;" />
                   <img src="assets/img/partner/2.jpg" alt="Image 2" style="width: 23%; height: auto; border-radius: 20px;" />
@@ -465,7 +512,7 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
               </div>
 
               <!-- Slide 2 -->
-              <div class="partners-slide" style="width: 20%; display: flex; align-items: center; justify-content: space-between;">
+              <div class="slider-slide" style="width: 20%; display: flex; align-items: center; justify-content: space-between;">
                 <div style="flex: 1; display: flex; justify-content: space-between; padding: 10px;">
                   <img src="assets/img/partner/5.jpg" alt="Image 5" style="width: 23%; height: auto; border-radius: 20px;" />
                   <img src="assets/img/partner/6.jpg" alt="Image 6" style="width: 23%; height: auto; border-radius: 20px;" />
@@ -475,7 +522,7 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
               </div>
 
               <!-- Slide 3 -->
-              <div class="partners-slide" style="width: 20%; display: flex; align-items: center; justify-content: space-between;">
+              <div class="slider-slide" style="width: 20%; display: flex; align-items: center; justify-content: space-between;">
                 <div style="flex: 1; display: flex; justify-content: space-between; padding: 10px;">
                   <img src="assets/img/partner/9.jpg" alt="Image 9" style="width: 23%; height: auto; border-radius: 20px;" />
                   <img src="assets/img/partner/10.jpg" alt="Image 10" style="width: 23%; height: auto; border-radius: 20px;" />
@@ -483,13 +530,10 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
                   <img src="assets/img/partner/12.png" alt="Image 12" style="width: 23%; height: auto; border-radius: 20px;" />
                 </div>
               </div>
-
-            
-              
             </div>
 
             <!-- Next Button -->
-            <button id="nextButton" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: none; border: none; cursor: pointer; z-index: 10;">
+            <button id="nextButtonSlider" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: none; border: none; cursor: pointer; z-index: 10;">
               <img src="assets/img/partner/next.png" alt="Next" style="width: 40px; height: 40px;" />
             </button>
           </div>
@@ -500,36 +544,42 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
 
   <!-- JavaScript for Slide Transition -->
   <script>
-    let currentIndex = 0;
-    const totalSlides = 3;
-    const partnersContainer = document.getElementById("partnersContainer");
+    let currentSlideIndex = 0;
+    const totalSliderSlides = 3;
+    const sliderContainer = document.getElementById("sliderContainer");
 
     // Slide Change Function
-    function slideChange() {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      updateSlider();
+    function changeSlide() {
+      currentSlideIndex = (currentSlideIndex + 1) % totalSliderSlides;
+      updateSliderPosition();
     }
 
     // Update Slider Position
-    function updateSlider() {
-      partnersContainer.style.transform = `translateX(-${currentIndex * 20}%)`;
+    function updateSliderPosition() {
+      sliderContainer.style.transform = `translateX(-${currentSlideIndex * 20}%)`;
     }
 
     // Event Listeners for Buttons
-    document.getElementById("prevButton").addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-      updateSlider();
+    document.getElementById("prevButtonSlider").addEventListener("click", () => {
+      currentSlideIndex = (currentSlideIndex - 1 + totalSliderSlides) % totalSliderSlides;
+      updateSliderPosition();
     });
 
-    document.getElementById("nextButton").addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      updateSlider();
+    document.getElementById("nextButtonSlider").addEventListener("click", () => {
+      currentSlideIndex = (currentSlideIndex + 1) % totalSliderSlides;
+      updateSliderPosition();
     });
 
     // Automatic Slide Transition
-    setInterval(slideChange, 4000);
+    setInterval(changeSlide, 4000);
+
+    // Check for mobile screen size and update background color
+    if (window.innerWidth <= 320) {
+      document.getElementById('carouselSection').style.backgroundColor = "black";
+    }
   </script>
 </section>
+
 
 
 
