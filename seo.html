@@ -308,12 +308,20 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Us</h4>
-            <p>Get in touch with us and we will keep connection with you. Just subscribe your email</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
+  <h4>Join Us</h4>
+  <p>Get in touch with us and we will keep connection with you. Just subscribe your email</p>
+  <form action="https://api.web3forms.com/submit" method="post" role="form" class="php-email-form">
+    <!-- Web3Forms Access Key -->
+    <input type="hidden" name="access_key" value="ece71aa4-a60d-4ff5-8a58-c352006ff40a">
+    
+    <!-- Email Input -->
+    <input type="email" name="email" required placeholder="Enter your email">
+    
+    <!-- Subscribe Button -->
+    <input type="submit" value="Subscribe">
+  </form>
+</div>
+
 
         </div>
       </div>

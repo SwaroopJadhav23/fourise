@@ -60,14 +60,14 @@
   <header id="header" style="background: #fff; box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); position: fixed; top: 0; width: 100%; z-index: 999; padding: 15px 0;">
     <div style="display: flex; justify-content: center; align-items: center;">
         <h1 id="logoText" style=" font-weight: bold; margin: 0; padding: 0; color: #e03a3c;">
-            <a href="index.html" style="text-decoration: none; color: inherit;">
+            <a href="home.html" style="text-decoration: none; color: inherit;">
                 Fourise <span style="color: #000;">Software Solutions Pvt. Ltd.</span>
             </a>
         </h1>
 
         <nav style="margin-left: 50px;">
             <ul class="nav-menu" style="list-style: none; display: flex; margin: 0; padding: 0;">
-              <li class="nav-item" style="margin: 0 20px;"><a href="index.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">Home</a></li>
+              <li class="nav-item" style="margin: 0 20px;"><a href="home.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">Home</a></li>
               <li class="nav-item" style="margin: 0 20px;"><a href="about.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">About</a></li>
               <li class="nav-item" style="margin: 0 20px;"><a href="services.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">Services</a></li>
               <li class="nav-item" style="margin: 0 20px;"><a href="career.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">Career</a></li>
@@ -222,7 +222,7 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
                 <div style="flex: 1; text-align: justify; padding-left: 10px;">
                   <h1 style="color: #e03a3c; font-weight: bold; text-align: justify;">Create Mobile Apps With us</h1>
                   <p>Every business wants to become easier for clients so mobile applications perform such wonderful tasks.</p>
-                  <a href="contact.php" class="btn-get-started scrollto">Contact us</a>
+                  <a href="contact.html" class="btn-get-started scrollto">Contact us</a>
                 </div>
               </div>
 
@@ -236,7 +236,7 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
                 <div style="flex: 1; text-align: justify; padding-left: 20px;">
                   <h1 style="color: #e03a3c; font-weight: bold; text-align: justify;">Create Websites With us</h1>
                   <p>We provide all business Websites with minimum cost. Also Web applications for spreading your business over the Internet.</p>
-                  <a href="web.php" class="btn-get-started scrollto">Get in touch</a>
+                  <a href="web.html" class="btn-get-started scrollto">Get in touch</a>
                 </div>
               </div>
 
@@ -250,7 +250,7 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
                 <div style="flex: 1; text-align: justify; padding-left: 20px;">
                   <h1 style="color: #e03a3c; font-weight: bold; text-align: justify;">Develop RPA Projects With Us</h1>
                   <p>Robotic Process Automation Solicite Daily human tasks into the machine process.</p>
-                  <a href="rpa-internship.php" class="btn-get-started scrollto">Contact us</a>
+                  <a href="rpa-internship.html" class="btn-get-started scrollto">Contact us</a>
                 </div>
               </div>
 
@@ -460,7 +460,7 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
          <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home.html">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="services.html">Services</a></li>
                <li><i class="bx bx-chevron-right"></i> <a href="product.html">Product</a></li>
@@ -480,12 +480,20 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Us</h4>
-            <p>Get in touch with us and we will keep connection with you. Just subscribe your email</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
+  <h4>Join Us</h4>
+  <p>Get in touch with us and we will keep connection with you. Just subscribe your email</p>
+  <form action="https://api.web3forms.com/submit" method="post" role="form" class="php-email-form">
+    <!-- Web3Forms Access Key -->
+    <input type="hidden" name="access_key" value="ece71aa4-a60d-4ff5-8a58-c352006ff40a">
+    
+    <!-- Email Input -->
+    <input type="email" name="email" required placeholder="Enter your email">
+    
+    <!-- Subscribe Button -->
+    <input type="submit" value="Subscribe">
+  </form>
+</div>
+
 
         </div>
       </div>
