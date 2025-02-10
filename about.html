@@ -60,14 +60,14 @@
   <header id="header" style="background: #fff; box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); position: fixed; top: 0; width: 100%; z-index: 999; padding: 15px 0;">
     <div style="display: flex; justify-content: center; align-items: center;">
         <h1 id="logoText" style=" font-weight: bold; margin: 0; padding: 0; color: #e03a3c;">
-            <a href="home.html" style="text-decoration: none; color: inherit;">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
                 Fourise <span style="color: #000;">Software Solutions Pvt. Ltd.</span>
             </a>
         </h1>
 
         <nav style="margin-left: 50px;">
             <ul class="nav-menu" style="list-style: none; display: flex; margin: 0; padding: 0;">
-              <li class="nav-item" style="margin: 0 20px;"><a href="home.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">Home</a></li>
+              <li class="nav-item" style="margin: 0 20px;"><a href="index.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">Home</a></li>
               <li class="nav-item" style="margin: 0 20px;"><a href="about.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">About</a></li>
               <li class="nav-item" style="margin: 0 20px;"><a href="services.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">Services</a></li>
               <li class="nav-item" style="margin: 0 20px;"><a href="career.html" style="text-decoration: none; color: #111; font-size: 16px; font-weight: 500;">Career</a></li>
@@ -199,9 +199,6 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
 
 
   <!-- ======= Hero Section with Horizontal Slider ======= -->
-
-
-<!-- ======= Hero Section with Horizontal Slider ======= -->
 <section id="hero" class="d-flex align-items-center" style="background-color: #f8f9fa; padding: 60px 0; margin-top: 2%;">
   <div class="container-fluid" data-aos="zoom-out" data-aos-delay="100">
     <div class="row justify-content-center">
@@ -209,16 +206,14 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
         <div class="row">
           <!-- Slider Container -->
           <div class="col-xl-12" style="overflow: hidden; position: relative; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); border-radius: 10px; margin-bottom: 20px;">
-            <div id="sliderContainer" class="slider-container" style="display: flex; transition: transform 0.5s ease; width: 300%; touch-action: pan-y;">
-
+            <div id="sliderContainer" class="slider-container" style="display: flex; transition: transform 0.5s ease-in-out; width: 500%; touch-action: pan-y;">
+              
               <!-- Slide 1 -->
-              <div class="slide" style="width: 32.33%; display: flex; align-items: center; justify-content: space-between;">
-                <!-- Lottie Animation -->
+              <div class="slide" style="width: 20%; display: flex; align-items: center; justify-content: space-between;">
                 <div style="flex: 1;">
                   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.3.0/dist/dotlottie-wc.js" type="module"></script>
                   <dotlottie-wc src="https://lottie.host/4e91e3cc-3bf3-4a81-bcfe-faace7c88d8c/IhBY7pLZJ2.lottie" autoplay loop style="width: 100%; height: auto; margin-left: -10%;"></dotlottie-wc>
                 </div>
-                <!-- Heading and Text -->
                 <div style="flex: 1; text-align: justify; padding-left: 10px;">
                   <h1 style="color: #e03a3c; font-weight: bold; text-align: justify;">Create Mobile Apps With us</h1>
                   <p>Every business wants to become easier for clients so mobile applications perform such wonderful tasks.</p>
@@ -227,12 +222,10 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
               </div>
 
               <!-- Slide 2 -->
-              <div class="slide" style="width: 32.33%; display: flex; align-items: center; justify-content: space-between;">
-                <!-- Lottie Animation -->
+              <div class="slide" style="width: 20%; display: flex; align-items: center; justify-content: space-between;">
                 <div style="flex: 1;">
                   <dotlottie-wc src="https://lottie.host/1c50b72e-37e9-4b2b-92c6-bf177edf697f/U4aMOcEXhv.lottie" autoplay loop style="width: 100%; height: auto;"></dotlottie-wc>
                 </div>
-                <!-- Heading and Text -->
                 <div style="flex: 1; text-align: justify; padding-left: 20px;">
                   <h1 style="color: #e03a3c; font-weight: bold; text-align: justify;">Create Websites With us</h1>
                   <p>We provide all business Websites with minimum cost. Also Web applications for spreading your business over the Internet.</p>
@@ -241,16 +234,26 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
               </div>
 
               <!-- Slide 3 -->
-              <div class="slide" style="width: 32.33%; display: flex; align-items: center; justify-content: space-between;">
-                <!-- Lottie Animation -->
+              <div class="slide" style="width: 20%; display: flex; align-items: center; justify-content: space-between;">
                 <div style="flex: 1;">
                   <dotlottie-wc src="https://lottie.host/0a4f7e33-a355-4817-96ae-f448fb7dfcd0/MADGerX19k.lottie" autoplay loop style="width: 100%; height: auto;"></dotlottie-wc>
                 </div>
-                <!-- Heading and Text -->
                 <div style="flex: 1; text-align: justify; padding-left: 20px;">
                   <h1 style="color: #e03a3c; font-weight: bold; text-align: justify;">Develop RPA Projects With Us</h1>
                   <p>Robotic Process Automation Solicite Daily human tasks into the machine process.</p>
                   <a href="rpa-internship.html" class="btn-get-started scrollto">Contact us</a>
+                </div>
+              </div>
+
+              <!-- Clone of Slide 1 for Infinite Loop Effect -->
+              <div class="slide" style="width: 20%; display: flex; align-items: center; justify-content: space-between;">
+                <div style="flex: 1;">
+                  <dotlottie-wc src="https://lottie.host/4e91e3cc-3bf3-4a81-bcfe-faace7c88d8c/IhBY7pLZJ2.lottie" autoplay loop style="width: 100%; height: auto; margin-left: -10%;"></dotlottie-wc>
+                </div>
+                <div style="flex: 1; text-align: justify; padding-left: 10px;">
+                  <h1 style="color: #e03a3c; font-weight: bold; text-align: justify;">Create Mobile Apps With us</h1>
+                  <p>Every business wants to become easier for clients so mobile applications perform such wonderful tasks.</p>
+                  <a href="contact.html" class="btn-get-started scrollto">Contact us</a>
                 </div>
               </div>
 
@@ -259,11 +262,9 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
         </div>
       </div>
     </div>
-    <!-- Horizontal Line -->
     <hr style="border: 1px solid #e03a3c; margin: 20px 0;">
   </div>
 
-  <!-- JavaScript for Slide Transition and Swipe Gesture -->
   <script>
     let currentIndex = 0;
     const totalSlides = 3;
@@ -271,28 +272,43 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
     let touchStartX = 0;
     let touchEndX = 0;
     let autoSlide;
+    let isPaused = false;
 
     function slideChange(next = true) {
       if (next) {
-        currentIndex = (currentIndex + 1) % totalSlides;
+        currentIndex++;
       } else {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        currentIndex--;
       }
-      sliderContainer.style.transform = `translateX(-${currentIndex * 33.33}%)`;
+
+      sliderContainer.style.transition = "transform 0.5s ease-in-out";
+      sliderContainer.style.transform = `translateX(-${currentIndex * 20}%)`;
+
+      // Reset to first slide instantly after last clone
+      if (currentIndex === totalSlides) {
+        setTimeout(() => {
+          sliderContainer.style.transition = "none";
+          sliderContainer.style.transform = `translateX(0)`;
+          currentIndex = 0;
+        }, 500);
+      }
     }
 
     function autoSlideStart() {
-      autoSlide = setInterval(() => slideChange(true), 4000);
+      if (!isPaused) {
+        autoSlide = setInterval(() => slideChange(true), 4000);
+      }
     }
 
     function autoSlideStop() {
       clearInterval(autoSlide);
     }
 
-    // Swipe Detection
+    // Swipe Detection (For Mobile)
     sliderContainer.addEventListener("touchstart", (e) => {
       touchStartX = e.touches[0].clientX;
-      autoSlideStop(); // Stop auto-slide when user interacts
+      autoSlideStop();
+      isPaused = true;
     });
 
     sliderContainer.addEventListener("touchmove", (e) => {
@@ -303,20 +319,30 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
       let swipeDistance = touchStartX - touchEndX;
 
       if (swipeDistance > 50) {
-        slideChange(true); // Swipe left to next slide
+        slideChange(true);
       } else if (swipeDistance < -50) {
-        slideChange(false); // Swipe right to previous slide
+        slideChange(false);
       }
 
-      autoSlideStart(); // Restart auto-slide after user interaction
+      isPaused = false;
+      autoSlideStart();
+    });
+
+    // Pause slider on mouse enter and resume on mouse leave
+    sliderContainer.addEventListener("mouseenter", () => {
+      isPaused = true;
+      autoSlideStop();
+    });
+
+    sliderContainer.addEventListener("mouseleave", () => {
+      isPaused = false;
+      autoSlideStart();
     });
 
     // Start auto-slide
     autoSlideStart();
   </script>
 </section>
-
-
 
 
 
@@ -438,7 +464,6 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
     
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
   <footer id="footer">
 
     <div class="footer-top">
@@ -448,12 +473,12 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Fourise<span> Software Solutions Pvt. Ltd. Pune</span></h3>
             <p>
-			  <p style="color:DodgerBlue;"><b>Office Address</b></p>
+        <p style="color:DodgerBlue; margin-left: -62%;"><b>Office Address</b></p>
               Office No: 1, First Floor,<br>
               Surabhi Complex, Chandan Nagar,<br>
               Kharadi, Pune, Maharashtra (411014) <br><br>
               <strong>Phone:</strong> +91 9527605805<br>
-			  <strong>Email:</strong> info@fouriseindia.com<br>
+        <strong>Email:</strong> info@fouriseindia.com<br>
             </p>
           </div>
 
@@ -479,7 +504,8 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
 
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
+          <!-- Newsletter Section -->
+<div class="col-lg-4 col-md-6 footer-newsletter">
   <h4>Join Us</h4>
   <p>Get in touch with us and we will keep connection with you. Just subscribe your email</p>
   <form action="https://api.web3forms.com/submit" method="post" role="form" class="php-email-form">
@@ -493,6 +519,7 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
     <input type="submit" value="Subscribe">
   </form>
 </div>
+
 
 
         </div>

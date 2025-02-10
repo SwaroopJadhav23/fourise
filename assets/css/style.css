@@ -1221,20 +1221,22 @@ p {
   font-size: 16px;
   font-weight: bold;
   position: relative;
-  padding-bottom: 12px;
-  color: #e03a3c; /* Set color of h4 to #e03a3c */
+  padding-bottom: 12px; /* Space between text and underline */
+  color: #e03a3c; /* Red color */
+  display: inline-block; /* Ensures width fits the text */
 }
 
 #footer .footer-top h4::after {
   content: '';
   position: absolute;
   display: block;
-  width: 20px;
+  width: 100%; /* Makes underline match text width */
   height: 2px;
-  background: #e03a3c;
+  background: #e03a3c; /* Red underline */
   bottom: 0;
   left: 0;
 }
+
 
 #footer .footer-top .footer-links {
   margin-bottom: 30px;
@@ -1297,10 +1299,13 @@ p {
 }
 
 #footer .footer-newsletter form input[type="email"] {
-  border: 0;
+  border: none;
+  outline: none; /* Removes the focus outline */
+  box-shadow: none; /* Removes any additional focus shadow */
   padding: 4px 8px;
   width: calc(100% - 100px);
 }
+
 
 #footer .footer-newsletter form input[type="submit"] {
   position: absolute;
@@ -1316,6 +1321,7 @@ p {
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  border: none;
 }
 
 #footer .footer-newsletter form input[type="submit"]:hover {

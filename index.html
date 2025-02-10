@@ -77,6 +77,78 @@
           </nav>
     </div>
 </header>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll('.nav-item a');
+
+    // Smooth scrolling for internal links
+    navLinks.forEach(link => {
+      link.addEventListener("click", function (event) {
+        const targetId = this.getAttribute("href");
+        if (targetId.startsWith("#")) { // Check if it's an internal link
+          event.preventDefault();
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+            window.scrollTo({
+              top: targetSection.offsetTop - 50, // Adjust offset for fixed header
+              behavior: "smooth"
+            });
+          }
+        }
+      });
+    });
+
+    // Function to highlight active nav link
+    function highlightActiveLink() {
+      const currentPage = window.location.pathname.split("/").pop();
+      navLinks.forEach(link => {
+        link.style.color = "#111"; // Default color
+        link.style.fontWeight = "500";
+        if (link.getAttribute('href') === currentPage) {
+          link.style.color = "#e03a3c"; // Active color
+          link.style.fontWeight = "bold";
+        }
+      });
+    }
+
+    highlightActiveLink();
+  });
+
+  // Adjust logo and navigation styles dynamically
+  function adjustLogoAndNav() {
+    const logoText = document.getElementById("logoText");
+    const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+
+    if (!logoText) return;
+
+    const screenWidth = window.innerWidth;
+    let fontSize = screenWidth <= 320 ? "14px" : screenWidth <= 375 ? "16px" : "24px";
+    let marginLeft = screenWidth <= 425 ? "-5px" : "0px";
+
+    logoText.style.fontSize = fontSize;
+    logoText.style.marginLeft = marginLeft;
+    logoText.style.textAlign = "left";
+
+    if (mobileNavToggle) {
+      mobileNavToggle.style.marginTop = screenWidth <= 425 ? "-30px" : "0px";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", adjustLogoAndNav);
+  window.addEventListener("resize", adjustLogoAndNav);
+
+  // Optimize event listeners with debounce
+  function debounce(func, delay) {
+    let timeout;
+    return function () {
+      clearTimeout(timeout);
+      timeout = setTimeout(func, delay);
+    };
+  }
+
+  window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
+</script>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -431,8 +503,8 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
       bullets.forEach(span => span.style.fontSize = "12px");
     } else {
       title.style.fontSize = "36px";
-      list.style.fontSize = "16px";
-      bullets.forEach(span => span.style.fontSize = "14px");
+      list.style.fontSize = "18px";
+      bullets.forEach(span => span.style.fontSize = "16px");
     }
   }
 
@@ -628,14 +700,14 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
                 <div class="info-box mt-4">
                   <i class="bx bx-envelope"></i>
                   <h3>Email Us</h3>
-                  <p>info@fouriseindia.com<br>fouriseindia@gmail.com</p>
+                  <p style="color: black;">info@fouriseindia.com<br>fouriseindia@gmail.com</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box mt-4">
                   <i class="bx bx-phone-call"></i>
                   <h3>Call Us</h3>
-                  <p>+91 9607580580<br>+91 7020759254</p>
+                  <p style="color: black;">+91 9607580580<br>+91 7020759254</p>
                 </div>
               </div>
             </div>
@@ -720,7 +792,8 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
 
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
+          <!-- Newsletter Section -->
+<div class="col-lg-4 col-md-6 footer-newsletter">
   <h4>Join Us</h4>
   <p>Get in touch with us and we will keep connection with you. Just subscribe your email</p>
   <form action="https://api.web3forms.com/submit" method="post" role="form" class="php-email-form">
@@ -734,6 +807,7 @@ window.addEventListener("resize", debounce(adjustLogoAndNav, 100));
     <input type="submit" value="Subscribe">
   </form>
 </div>
+
 
 
         </div>

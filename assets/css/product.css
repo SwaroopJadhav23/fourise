@@ -489,6 +489,7 @@ nav {
   color: red;
   margin-top: 3%;
   word-wrap: break-word; /* Prevent overflow of long text */
+  font-weight: bold;
 }
 
 .products h2 {
@@ -545,7 +546,7 @@ nav {
 }
 
 .text p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 10px;
   color: black;
   margin-bottom: 3%;
